@@ -1,2 +1,3 @@
-# relaybypass
-Relay Bypass code for PIC12F675 used in Coda Effects pedals (www.coda-effects.com)
+# relay bypass latching
+Relay Bypass code for PIC12F675 with a latching relay 
+Based on code from Coda Effects (www.coda-effects.com)
