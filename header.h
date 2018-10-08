@@ -1,8 +1,10 @@
 /* 
  * File:   header.h
- * Author: Coda Effects (Benoit M)
+ * Author: Benoit M from Coda Effects
+ * Created on 7 February 2017
  *
- * Created on 7 février 2016, 14:41
+ * Modified by Dan Burgess
+ * 5 October 2018
  */
 
 // CONFIG
@@ -14,5 +16,5 @@
 #pragma config CP = OFF         // Code Protection bit (Program Memory code protection is disabled)
 #pragma config CPD = OFF        // Data Code Protection bit (Data memory code protection is disabled)
 
-// Définir la fréquence de l'oscillateur
+// PIC Clock Speed 4MHz (max)
 #define _XTAL_FREQ 4000000
