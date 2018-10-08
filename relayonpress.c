@@ -15,19 +15,27 @@
 #include "header.h"
 
 // Functions
+// Need a delay function to have delay from variable
+void delay_ms( uint16_t milliseconds ) {
+    while( milliseconds > 0 ) {
+        __delay_ms( 1 );
+        milliseconds--;
+    }
+}
+
 void flashLed ( uint16_t delayInMs ) { // 65535 max
     
     GP0 = 1; // LED on
-    __delay_ms( delayInMs );
+    delay_ms( delayInMs );
     GP0 = 0; // LED off
-    __delay_ms( delayInMs );
+    delay_ms( delayInMs );
 
 }
 
 uint8_t pedalOn ( uint8_t delayInMs ) { // 255 max
     
     GP2 = 1; // photoFET on
-    __delay_ms( delayInMs );
+    delay_ms( delayInMs );
     GP0 = 1; // LED on
     
     // Send relay pulse
@@ -37,7 +45,7 @@ uint8_t pedalOn ( uint8_t delayInMs ) { // 255 max
     GP5 = 0; // negative relay output off
     GP4 = 0; // positive relay output off   
     
-    __delay_ms( delayInMs );
+    delay_ms( delayInMs );
     GP2 = 0; // photoFET off
     
     return 1;
@@ -46,7 +54,7 @@ uint8_t pedalOn ( uint8_t delayInMs ) { // 255 max
 uint8_t pedalOff ( uint8_t delayInMs ) { // 255 max
     
     GP2 = 1; // photoFET on
-    __delay_ms( delayInMs );
+    delay_ms( delayInMs );
     GP0 = 0; // LED off
     
     // Send relay pulse
@@ -56,7 +64,7 @@ uint8_t pedalOff ( uint8_t delayInMs ) { // 255 max
     GP5 = 0; // negative relay output off
     GP4 = 0; // positive relay output off  
     
-    __delay_ms( delayInMs );
+    delay_ms( delayInMs );
     GP2 = 0; // photoFET off
     
     return 0;
@@ -161,3 +169,5 @@ void main( void ) {
     }
     
 }
+
+
