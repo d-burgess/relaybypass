@@ -16,7 +16,7 @@
 
 // Functions
 // Need a delay function to have delay from variable
-void delay_ms( uint16_t milliseconds ) {
+void delay_ms( uint16_t milliseconds ) { // 65535 max
     while( milliseconds > 0 ) {
         __delay_ms( 1 );
         milliseconds--;
