@@ -46,7 +46,7 @@ uint8_t pedalOn ( uint8_t delayInMs ) { // 255 max
     GP4 = 0; // positive relay output off    
     
     delay_ms( delayInMs );
-    GP4 = 0; // photoFET off
+    GP5 = 0; // photoFET off
     
     return 1;
 }
@@ -65,7 +65,7 @@ uint8_t pedalOff ( uint8_t delayInMs ) { // 255 max
     GP4 = 0; // positive relay output off   
     
     delay_ms( delayInMs );
-    GP4 = 0; // photoFET off
+    GP5 = 0; // photoFET off
     
     return 0;
 }
