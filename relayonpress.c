@@ -34,38 +34,38 @@ void flashLed ( uint16_t delayInMs ) { // 65535 max
 
 uint8_t pedalOn ( uint8_t delayInMs ) { // 255 max
     
-    GP2 = 1; // photoFET on
+    GP4 = 1; // photoFET on
     delay_ms( delayInMs );
     GP0 = 1; // LED on
     
     // Send relay pulse
-    GP5 = 1; // negative relay output on
-    GP4 = 0; // positive relay output off
+    GP2 = 1; // negative relay output on
+    GP3 = 0; // positive relay output off
     __delay_ms( 5 );
-    GP5 = 0; // negative relay output off
-    GP4 = 0; // positive relay output off   
+    GP2 = 0; // negative relay output off
+    GP3 = 0; // positive relay output off   
     
     delay_ms( delayInMs );
-    GP2 = 0; // photoFET off
+    GP4 = 0; // photoFET off
     
     return 1;
 }
 
 uint8_t pedalOff ( uint8_t delayInMs ) { // 255 max
     
-    GP2 = 1; // photoFET on
+    GP4 = 1; // photoFET on
     delay_ms( delayInMs );
     GP0 = 0; // LED off
     
     // Send relay pulse
-    GP5 = 0; // negative relay output off
-    GP4 = 1; // positive relay output on
+    GP2 = 0; // negative relay output off
+    GP3 = 1; // positive relay output on
     __delay_ms( 5 );
-    GP5 = 0; // negative relay output off
-    GP4 = 0; // positive relay output off  
+    GP2 = 0; // negative relay output off
+    GP3 = 0; // positive relay output off  
     
     delay_ms( delayInMs );
-    GP2 = 0; // photoFET off
+    GP4 = 0; // photoFET off
     
     return 0;
 }
@@ -94,10 +94,10 @@ void main( void ) {
     // PIC pin 8 GND
     TRISIO0 = 0; // IO 0 LED output - PIC pin 7
     TRISIO1 = 1; // IO 1 footswitch input - PIC pin 6
-    TRISIO2 = 0; // IO 2 photoFET output - PIC pin 5
-    TRISIO3 = 1; // IO 3 startup option switch input - PIC pin 4
-    TRISIO4 = 0; // IO 4 positive relay output - PIC pin 3
-    TRISIO5 = 0; // IO 5 negative relay output - PIC pin 2
+    TRISIO2 = 0; // IO 2 negative relay output - PIC pin 5
+    TRISIO3 = 0; // IO 3 positive relay output - PIC pin 4
+    TRISIO4 = 0; // IO 4 photoFET output - PIC pin 3
+    TRISIO5 = 1; // IO 5 startup option switch input - PIC pin 2 
     // PIC pin 1 +5V
 
     GPIO = 0; // set outputs as low level (0V)
@@ -106,11 +106,14 @@ void main( void ) {
     uint8_t state; // on-off state of the pedal (1 = on, 0 = off)
     uint8_t startupOption; // startup option switch state (1 = on, 0 = off)
     uint8_t switchStatus; // variable to detect if the switch is pressed
-    uint8_t statusChangeAllowed; // Variable to allow switch operation to change pedal state
-
+    uint8_t statusChangeAllowed; // allow switch operation to change pedal state
+    uint8_t i; // used for counters
+    uint8_t downCount = 0; // used for switch down debouncing
+    uint8_t upCount = 0; // used for switch up debouncing
+    
     // Check startup option switch
     // If pin 4 is low, startup option is on (switch is closed)
-    if ( GP3 == 0 ) { // startup option is on
+    if ( GP5 == 0 ) { // startup option is on
         startupOption = 1;
     } else { // startup option is off
         startupOption = 0;
@@ -138,8 +141,19 @@ void main( void ) {
         
         // Check switch is down
         if( GP1 == 0 ) { // footswitch down
-            __delay_ms( 15 ); // debouncing
-            if( GP1 == 0 ) { // switch still down
+            i = 15;
+            downCount = 0;
+            while( i > 0 ) { // debouncing loop
+                __delay_ms( 1 );
+                if( GP1 == 0 ) { // switch still down
+                    downCount++;
+                } else {
+                    downCount = 0;
+                }
+                i--;
+            }
+            if( downCount > 14 ) { // switch constantly down for 15ms
+                downCount = 0;
                 if( switchStatus != 1 ) {
                     switchStatus = 1;
                 }
@@ -148,8 +162,19 @@ void main( void ) {
         
         // Check switch is up
         if( GP1 == 1 ) { // footswitch up
-            __delay_ms( 15 ); // debouncing
-            if( GP1 == 1 ) { // footswitch still up
+            i = 15;
+            upCount = 0;
+            while( i > 0 ) { // debouncing loop
+                __delay_ms( 1 );
+                if( GP1 == 1 ) { // switch still up
+                    upCount++;
+                } else {
+                    upCount = 0;
+                }
+                i--;
+            }
+            if( upCount > 14 ) { // switch constantly up for 15ms
+                upCount = 0;
                 if( switchStatus != 0 ) {
                     switchStatus = 0;
                 }
@@ -169,5 +194,3 @@ void main( void ) {
     }
     
 }
-
-
