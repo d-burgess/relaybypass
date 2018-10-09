@@ -16,7 +16,7 @@
 
 // Functions
 // Need a delay function to have delay from variable
-void delay_ms( uint16_t milliseconds ) { // 65535 max
+void delay_ms ( uint16_t milliseconds ) { // 65535 max
     while( milliseconds > 0 ) {
         __delay_ms( 1 );
         milliseconds--;
@@ -39,11 +39,11 @@ uint8_t pedalOn ( uint8_t delayInMs ) { // 255 max
     GP0 = 1; // LED on
     
     // Send relay pulse
-    GP2 = 1; // negative relay output on
-    GP3 = 0; // positive relay output off
+    GP2 = 1; // positive relay output on
+    GP3 = 0; // negative relay output off
     __delay_ms( 5 );
-    GP2 = 0; // negative relay output off
-    GP3 = 0; // positive relay output off   
+    GP2 = 0; // positive relay output off
+    GP3 = 0; // negative relay output off   
     
     delay_ms( delayInMs );
     GP4 = 0; // photoFET off
@@ -58,11 +58,11 @@ uint8_t pedalOff ( uint8_t delayInMs ) { // 255 max
     GP0 = 0; // LED off
     
     // Send relay pulse
-    GP2 = 0; // negative relay output off
-    GP3 = 1; // positive relay output on
+    GP2 = 0; // positive relay output off
+    GP3 = 1; // negative relay output on
     __delay_ms( 5 );
-    GP2 = 0; // negative relay output off
-    GP3 = 0; // positive relay output off  
+    GP2 = 0; // positive relay output off
+    GP3 = 0; // negative relay output off  
     
     delay_ms( delayInMs );
     GP4 = 0; // photoFET off
@@ -83,7 +83,7 @@ uint8_t changePedalState ( uint8_t state ) {
 }
 
 // Initialisation
-void main( void ) {
+void main ( void ) {
     
     // Initialise PIC
     ANSEL = 0; // no analog GPIOs
@@ -94,8 +94,8 @@ void main( void ) {
     // PIC pin 8 GND
     TRISIO0 = 0; // IO 0 LED output - PIC pin 7
     TRISIO1 = 1; // IO 1 footswitch input - PIC pin 6
-    TRISIO2 = 0; // IO 2 negative relay output - PIC pin 5
-    TRISIO3 = 0; // IO 3 positive relay output - PIC pin 4
+    TRISIO2 = 0; // IO 2 positive relay output - PIC pin 5
+    TRISIO3 = 0; // IO 3 negative relay output - PIC pin 4
     TRISIO4 = 0; // IO 4 photoFET output - PIC pin 3
     TRISIO5 = 1; // IO 5 startup option switch input - PIC pin 2 
     // PIC pin 1 +5V
@@ -137,55 +137,55 @@ void main( void ) {
     }
     
     // Main loop
-    while( 1 ) {
+    while ( 1 ) {
         
         // Check switch is down
-        if( GP1 == 0 ) { // footswitch down
+        if ( GP1 == 0 ) { // footswitch down
             i = 15;
             downCount = 0;
-            while( i > 0 ) { // debouncing loop
+            while ( i > 0 ) { // debouncing loop
                 __delay_ms( 1 );
-                if( GP1 == 0 ) { // switch still down
+                if ( GP1 == 0 ) { // switch still down
                     downCount++;
                 } else {
                     downCount = 0;
                 }
                 i--;
             }
-            if( downCount > 14 ) { // switch constantly down for 15ms
+            if ( downCount > 14 ) { // switch constantly down for 15ms
                 downCount = 0;
-                if( switchStatus != 1 ) {
+                if ( switchStatus != 1 ) {
                     switchStatus = 1;
                 }
             }
         }
         
         // Check switch is up
-        if( GP1 == 1 ) { // footswitch up
+        if ( GP1 == 1 ) { // footswitch up
             i = 15;
             upCount = 0;
-            while( i > 0 ) { // debouncing loop
+            while ( i > 0 ) { // debouncing loop
                 __delay_ms( 1 );
-                if( GP1 == 1 ) { // switch still up
+                if ( GP1 == 1 ) { // switch still up
                     upCount++;
                 } else {
                     upCount = 0;
                 }
                 i--;
             }
-            if( upCount > 14 ) { // switch constantly up for 15ms
+            if ( upCount > 14 ) { // switch constantly up for 15ms
                 upCount = 0;
-                if( switchStatus != 0 ) {
+                if ( switchStatus != 0 ) {
                     switchStatus = 0;
                 }
-                if( statusChangeAllowed != 1 ) {
+                if ( statusChangeAllowed != 1 ) {
                     statusChangeAllowed = 1;
                 }
             }
         }
         
         // Change the pedal state if switch has been pressed and status change is allowed
-        if( ( switchStatus == 1 ) && ( statusChangeAllowed == 1 ) ) { // switch is down: turn the pedal on or off
+        if ( ( switchStatus == 1 ) && ( statusChangeAllowed == 1 ) ) { // switch is down: turn the pedal on or off
             state = changePedalState( !( state ) );
             __delay_ms( 10 );
             statusChangeAllowed = 0; // no more status changes allowed until switch is up again
