@@ -149,6 +149,7 @@ void main ( void ) {
                     downCount++;
                 } else {
                     downCount = 0;
+					i = 0;
                 }
                 i--;
             }
@@ -170,6 +171,7 @@ void main ( void ) {
                     upCount++;
                 } else {
                     upCount = 0;
+					i = 0;
                 }
                 i--;
             }
