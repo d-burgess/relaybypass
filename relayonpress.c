@@ -39,11 +39,11 @@ uint8_t pedalOn ( uint8_t delayInMs ) { // 255 max
     GP0 = 1; // LED on
     
     // Send relay pulse
-    GP2 = 1; // positive relay output on
-    GP3 = 0; // negative relay output off
+    GP2 = 1; // negative relay output on
+    GP3 = 0; // positive relay output off
     __delay_ms( 5 );
-    GP2 = 0; // positive relay output off
-    GP3 = 0; // negative relay output off   
+    GP2 = 0; // negative relay output off
+    GP3 = 0; // positive relay output off   
     
     delay_ms( delayInMs );
     GP4 = 0; // photoFET off
@@ -58,11 +58,11 @@ uint8_t pedalOff ( uint8_t delayInMs ) { // 255 max
     GP0 = 0; // LED off
     
     // Send relay pulse
-    GP2 = 0; // positive relay output off
-    GP3 = 1; // negative relay output on
+    GP2 = 0; // negative relay output off
+    GP3 = 1; // positive relay output on
     __delay_ms( 5 );
-    GP2 = 0; // positive relay output off
-    GP3 = 0; // negative relay output off  
+    GP2 = 0; // negative relay output off
+    GP3 = 0; // positive relay output off  
     
     delay_ms( delayInMs );
     GP4 = 0; // photoFET off
@@ -94,8 +94,8 @@ void main ( void ) {
     // PIC pin 8 GND
     TRISIO0 = 0; // IO 0 LED output - PIC pin 7
     TRISIO1 = 1; // IO 1 footswitch input - PIC pin 6
-    TRISIO2 = 0; // IO 2 positive relay output - PIC pin 5
-    TRISIO3 = 0; // IO 3 negative relay output - PIC pin 4
+    TRISIO2 = 0; // IO 2 negative relay output - PIC pin 5
+    TRISIO3 = 0; // IO 3 positive relay output - PIC pin 4
     TRISIO4 = 0; // IO 4 photoFET output - PIC pin 3
     TRISIO5 = 1; // IO 5 startup option switch input - PIC pin 2 
     // PIC pin 1 +5V
