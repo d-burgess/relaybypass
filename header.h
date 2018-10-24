@@ -18,3 +18,26 @@
 
 // PIC Clock Speed 4MHz (max)
 #define _XTAL_FREQ 4000000
+
+// Globals
+#define ON     1
+#define OFF    0
+#define INPUT  1
+#define OUTPUT 0
+#define HIGH   1
+#define LOW    0
+
+// Function Prototypes
+void delay_ms ( uint16_t milliseconds );
+void photoFetOn ( void );
+void photoFetOff ( void );
+void ledOn ( void );
+void ledOff ( void );
+void negativeRelayOn ( void );
+void negativeRelayOff ( void );
+void positiveRelayOn ( void );
+void positiveRelayOff ( void );
+void flashLed ( uint16_t delayInMs );
+uint8_t pedalOn ( uint8_t delayInMs );
+uint8_t pedalOff ( uint8_t delayInMs );
+uint8_t changePedalState ( uint8_t state );
