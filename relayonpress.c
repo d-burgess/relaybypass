@@ -194,7 +194,7 @@ uint8_t pedalOn ( uint8_t delayInMs ) { // 255 max
     delay_ms( delayInMs );
     photoFetOff();
 
-    return 1;
+    return ON;
 }
 
 uint8_t pedalOff ( uint8_t delayInMs ) { // 255 max
@@ -213,17 +213,17 @@ uint8_t pedalOff ( uint8_t delayInMs ) { // 255 max
     delay_ms( delayInMs );
     photoFetOff();
 
-    return 0;
+    return OFF;
 }
 
 uint8_t changePedalState ( uint8_t state ) {
 
-    if( state == 1 ) {
+    if ( state == ON ) {
         pedalOn( 15 );
-        return 1;
+        return ON;
     } else {
         pedalOff( 15 );
-        return 0;
+        return OFF;
     }
 
 }
