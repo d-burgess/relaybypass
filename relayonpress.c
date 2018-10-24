@@ -27,7 +27,7 @@ void main ( void ) {
     TRISIO0 = OUTPUT; // IO 0 LED output - PIC pin 7
     TRISIO1 = INPUT; // IO 1 footswitch input - PIC pin 6
     TRISIO2 = OUTPUT; // IO 2 negative relay output - PIC pin 5
-	TRISIO3 = INPUT; // Ix 3 startup option switch input - PIC pin 4 - GP3 input only
+    TRISIO3 = INPUT; // Ix 3 startup option switch input - PIC pin 4 - GP3 input only
     TRISIO4 = OUTPUT; // IO 4 positive relay output - PIC pin 3
     TRISIO5 = OUTPUT; // IO 5 photoFET output - PIC pin 2 
     // PIC pin 1 +5V
