@@ -1,0 +1,434 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\Dan\AppData\Local\Temp\s4lk.o
+end_init CODE 0 0 0 5 2
+config CONFIG 4 2007 2007 1 2
+$dist/default/production\Relay_Bypass_Latching.X.production.o
+cinit CODE 0 3FD 3FD 2 2
+text1 CODE 0 2C4 2C4 F 2
+text2 CODE 0 2B5 2B5 F 2
+text3 CODE 0 30F 30F 25 2
+text4 CODE 0 2B2 2B2 3 2
+text5 CODE 0 2AF 2AF 3 2
+text6 CODE 0 2EA 2EA 25 2
+text7 CODE 0 2AC 2AC 3 2
+text8 CODE 0 2A9 2A9 3 2
+text9 CODE 0 2A6 2A6 3 2
+text10 CODE 0 2A3 2A3 3 2
+text11 CODE 0 2A0 2A0 3 2
+text12 CODE 0 29D 29D 3 2
+text13 CODE 0 2D3 2D3 17 2
+maintext CODE 0 334 334 C9 2
+cstackBANK0 BANK0 1 20 20 10 1
+config CONFIG 4 2007 2007 1 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 30-5D 1
+BANK0 30-5D 1
+CONST 5-29C 2
+ENTRY 5-29C 2
+IDLOC 2000-2003 2
+STACK 30-5D 1
+CODE 5-29C 2
+SFR0 0-1F 1
+SFR1 80-DD 1
+EEDATA 2100-217F 2
+STRCODE 5-29C 2
+STRING 5-29C 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\Relay_Bypass_Latching.X.production.o
+3FD cinit CODE >287:C:\Users\Dan\AppData\Local\Temp\s4lk.s
+3FD cinit CODE >290:C:\Users\Dan\AppData\Local\Temp\s4lk.s
+3FD cinit CODE >296:C:\Users\Dan\AppData\Local\Temp\s4lk.s
+3FD cinit CODE >298:C:\Users\Dan\AppData\Local\Temp\s4lk.s
+3FE cinit CODE >299:C:\Users\Dan\AppData\Local\Temp\s4lk.s
+2D3 text13 CODE >134:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2D3 text13 CODE >135:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2D4 text13 CODE >136:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2DB text13 CODE >137:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2E2 text13 CODE >135:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2E9 text13 CODE >139:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+29D text12 CODE >153:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+29D text12 CODE >154:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+29F text12 CODE >155:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2A0 text11 CODE >161:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2A0 text11 CODE >162:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2A2 text11 CODE >163:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2A3 text10 CODE >145:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2A3 text10 CODE >146:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2A5 text10 CODE >147:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2A6 text9 CODE >141:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2A6 text9 CODE >142:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2A8 text9 CODE >143:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2A9 text8 CODE >169:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2A9 text8 CODE >170:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2AB text8 CODE >171:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2AC text7 CODE >165:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2AC text7 CODE >166:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2AE text7 CODE >167:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2EA text6 CODE >200:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2EC text6 CODE >202:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2ED text6 CODE >203:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2F6 text6 CODE >204:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2F7 text6 CODE >207:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2F8 text6 CODE >208:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2F9 text6 CODE >209:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+302 text6 CODE >210:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+303 text6 CODE >211:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+304 text6 CODE >213:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+30D text6 CODE >214:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+30E text6 CODE >217:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2AF text5 CODE >149:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2AF text5 CODE >150:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2B1 text5 CODE >151:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2B2 text4 CODE >157:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2B2 text4 CODE >158:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2B4 text4 CODE >159:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+30F text3 CODE >181:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+311 text3 CODE >183:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+312 text3 CODE >184:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+31B text3 CODE >185:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+31C text3 CODE >188:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+31D text3 CODE >189:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+31E text3 CODE >190:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+327 text3 CODE >191:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+328 text3 CODE >192:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+329 text3 CODE >194:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+332 text3 CODE >195:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+333 text3 CODE >198:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2B5 text2 CODE >219:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2B7 text2 CODE >221:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2BC text2 CODE >222:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2BE text2 CODE >223:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2C0 text2 CODE >225:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2C2 text2 CODE >226:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2C3 text2 CODE >229:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2C4 text1 CODE >173:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2C4 text1 CODE >175:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2C5 text1 CODE >176:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2CB text1 CODE >177:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2CC text1 CODE >178:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+2D2 text1 CODE >180:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+334 maintext CODE >18:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+334 maintext CODE >21:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+336 maintext CODE >22:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+339 maintext CODE >23:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+33A maintext CODE >27:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+33C maintext CODE >28:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+33D maintext CODE >29:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+33E maintext CODE >30:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+33F maintext CODE >31:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+340 maintext CODE >32:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+341 maintext CODE >35:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+343 maintext CODE >48:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+347 maintext CODE >49:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+349 maintext CODE >50:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+34A maintext CODE >51:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+34B maintext CODE >52:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+34B maintext CODE >55:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+34C maintext CODE >56:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+34D maintext CODE >60:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+352 maintext CODE >62:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+358 maintext CODE >64:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+35E maintext CODE >65:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+363 maintext CODE >66:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+369 maintext CODE >67:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+36A maintext CODE >68:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+370 maintext CODE >75:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+374 maintext CODE >76:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+378 maintext CODE >77:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+379 maintext CODE >78:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+37A maintext CODE >79:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+381 maintext CODE >80:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+386 maintext CODE >81:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+38A maintext CODE >82:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+38B maintext CODE >83:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+38C maintext CODE >84:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+38E maintext CODE >86:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+390 maintext CODE >78:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+395 maintext CODE >88:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+39B maintext CODE >89:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+39B maintext CODE >90:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3A0 maintext CODE >91:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3A2 maintext CODE >94:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3A2 maintext CODE >97:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3A6 maintext CODE >98:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3AA maintext CODE >99:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3AB maintext CODE >100:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3AC maintext CODE >101:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3B3 maintext CODE >102:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3B8 maintext CODE >103:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3BC maintext CODE >104:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3BD maintext CODE >105:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3BE maintext CODE >106:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3C0 maintext CODE >108:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3C2 maintext CODE >100:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3C7 maintext CODE >110:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3CD maintext CODE >111:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3CD maintext CODE >112:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3D2 maintext CODE >113:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3D3 maintext CODE >115:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3D8 maintext CODE >116:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3DA maintext CODE >122:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3E4 maintext CODE >123:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3F0 maintext CODE >124:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+3F9 maintext CODE >125:C:\Users\Dan\MPLABXProjects\Relay_Bypass_Latching.X\relayonpress.c
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+changePedalState@state 26 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_Latching.X.production.o
+__Hspace_0 7FE 0 ABS 0 - -
+__Hspace_1 7FE 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 400F 0 ABS 0 - -
+_positiveRelayOff 552 0 CODE 0 text8 dist/default/production\Relay_Bypass_Latching.X.production.o
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+main@i 2E 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_Latching.X.production.o
+__Hstrings 7FE 0 ABS 0 strings -
+_GPIO 5 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\Dan\AppData\Local\Temp\s4lk.o
+_main 668 0 CODE 0 maintext dist/default/production\Relay_Bypass_Latching.X.production.o
+btemp 5E 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+start 0 0 CODE 0 init C:\Users\Dan\AppData\Local\Temp\s4lk.o
+__size_of_main 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+__size_of_negativeRelayOn 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_photoFetOff 546 0 CODE 0 text10 dist/default/production\Relay_Bypass_Latching.X.production.o
+__Hpowerup 0 0 CODE 0 powerup -
+intlevel0 0 0 ENTRY 0 functab C:\Users\Dan\AppData\Local\Temp\s4lk.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Dan\AppData\Local\Temp\s4lk.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Dan\AppData\Local\Temp\s4lk.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Dan\AppData\Local\Temp\s4lk.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Dan\AppData\Local\Temp\s4lk.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Dan\AppData\Local\Temp\s4lk.o
+delay_ms@milliseconds 20 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_Latching.X.production.o
+wtemp0 5E 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+__Hclrtext 7FE 0 ABS 0 clrtext -
+_TRISIO0 428 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_TRISIO1 429 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_TRISIO2 42A 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_TRISIO3 42B 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_TRISIO4 42C 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_TRISIO5 42D 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_ADCON0 1F 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+__end_of_positiveRelayOff 558 0 CODE 0 text8 dist/default/production\Relay_Bypass_Latching.X.production.o
+__size_of_positiveRelayOff 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+__size_of_pedalOn 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+__Lmaintext 7FE 0 ABS 0 maintext -
+___stackhi 0 0 ABS 0 - C:\Users\Dan\AppData\Local\Temp\s4lk.o
+___stacklo 0 0 ABS 0 - C:\Users\Dan\AppData\Local\Temp\s4lk.o
+__size_of_ledOn 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+__size_of_photoFetOn 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_negativeRelayOff 540 0 CODE 0 text11 dist/default/production\Relay_Bypass_Latching.X.production.o
+flashLed@delayInMs 23 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_Latching.X.production.o
+start_initialization 7FA 0 CODE 0 cinit dist/default/production\Relay_Bypass_Latching.X.production.o
+__end_of_ledOff 540 0 CODE 0 text12 dist/default/production\Relay_Bypass_Latching.X.production.o
+pedalOff@delayInMs 25 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_Latching.X.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_Latching.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\Dan\AppData\Local\Temp\s4lk.o
+__Hbank0 7FE 0 ABS 0 bank0 -
+__Hbank1 7FE 0 BANK1 1 bank1 -
+__Hcinit 7FE 0 CODE 0 cinit -
+__Hstack 0 0 STACK 2 stack -
+__Hmaintext 7FE 0 ABS 0 maintext -
+__end_of_pedalOn 668 0 CODE 0 text3 dist/default/production\Relay_Bypass_Latching.X.production.o
+__Hcommon 7FE 0 ABS 0 common -
+__Hconfig 4010 0 CONFIG 4 config -
+__Lbank0 7FE 0 ABS 0 bank0 -
+__Lbank1 7FE 0 BANK1 1 bank1 -
+__Lcinit 7FA 0 CODE 0 cinit -
+__Lstack 0 0 STACK 2 stack -
+__Habs1 7FE 0 ABS 0 abs1 -
+__Hcode 7FE 0 ABS 0 code -
+__Hinit 0 0 CODE 0 init -
+__Hsfr0 7FE 0 ABS 0 sfr0 -
+__Hsfr1 7FE 0 ABS 0 sfr1 -
+__Htext 7FE 0 ABS 0 text -
+__Labs1 7FE 0 ABS 0 abs1 -
+__Lcode 7FE 0 ABS 0 code -
+__Linit 0 0 CODE 0 init -
+__Lsfr0 7FE 0 ABS 0 sfr0 -
+__Lsfr1 7FE 0 ABS 0 sfr1 -
+__Ltext 7FE 0 ABS 0 text -
+__end_of_negativeRelayOff 546 0 CODE 0 text11 dist/default/production\Relay_Bypass_Latching.X.production.o
+__LcstackBANK0 7FE 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 7FE 0 ABS 0 cstackCOMMON -
+_GP0 28 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_GP1 29 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_GP2 2A 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_GP3 2B 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_GP4 2C 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_GP5 2D 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+__S0 3FF 0 ABS 0 - -
+__S1 30 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+main@downCount 2B 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_Latching.X.production.o
+__size_of_negativeRelayOff 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+__end_of_photoFetOff 54C 0 CODE 0 text10 dist/default/production\Relay_Bypass_Latching.X.production.o
+main@statusChangeAllowed 2D 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_Latching.X.production.o
+__Hosccal 7FE 0 CODE 0 osccal -
+__Lintentry 0 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Dan\AppData\Local\Temp\s4lk.o
+_changePedalState 56A 0 CODE 0 text2 dist/default/production\Relay_Bypass_Latching.X.production.o
+__size_of_flashLed 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_ledOff 53A 0 CODE 0 text12 dist/default/production\Relay_Bypass_Latching.X.production.o
+__ptext10 546 0 CODE 0 text10 dist/default/production\Relay_Bypass_Latching.X.production.o
+__ptext11 540 0 CODE 0 text11 dist/default/production\Relay_Bypass_Latching.X.production.o
+__ptext12 53A 0 CODE 0 text12 dist/default/production\Relay_Bypass_Latching.X.production.o
+__ptext13 5A6 0 CODE 0 text13 dist/default/production\Relay_Bypass_Latching.X.production.o
+__end_of_positiveRelayOn 55E 0 CODE 0 text7 dist/default/production\Relay_Bypass_Latching.X.production.o
+__pmaintext 668 0 CODE 0 maintext dist/default/production\Relay_Bypass_Latching.X.production.o
+__Lcommon 7FE 0 ABS 0 common -
+__Lconfig 0 0 CONFIG 4 config -
+main@state 2A 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_Latching.X.production.o
+___osccal_val 7FE 0 CODE 0 osccal C:\Users\Dan\AppData\Local\Temp\s4lk.o
+__size_of_ledOff 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_flashLed 588 0 CODE 0 text1 dist/default/production\Relay_Bypass_Latching.X.production.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+__HcstackBANK0 7FE 0 ABS 0 cstackBANK0 -
+main@upCount 2C 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_Latching.X.production.o
+__Lend_init 0 0 CODE 0 end_init -
+__size_of_delay_ms 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+main@startupOption 29 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_Latching.X.production.o
+__LcstackCOMMON 7FE 0 ABS 0 cstackCOMMON -
+__size_of_pedalOff 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+__end_of_flashLed 5A6 0 CODE 0 text1 dist/default/production\Relay_Bypass_Latching.X.production.o
+_positiveRelayOn 558 0 CODE 0 text7 dist/default/production\Relay_Bypass_Latching.X.production.o
+end_of_initialization 7FA 0 CODE 0 cinit dist/default/production\Relay_Bypass_Latching.X.production.o
+__Hintentry 0 0 CODE 0 intentry -
+main@switchStatus 2F 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_Latching.X.production.o
+__end_of_changePedalState 588 0 CODE 0 text2 dist/default/production\Relay_Bypass_Latching.X.production.o
+__Losccal 7FE 0 CODE 0 osccal -
+__Lstrings 7FE 0 ABS 0 strings -
+__Hreset_vec 0 0 CODE 0 reset_vec -
+__size_of_changePedalState 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+pedalOn@delayInMs 25 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_Latching.X.production.o
+__end_of_negativeRelayOn 56A 0 CODE 0 text4 dist/default/production\Relay_Bypass_Latching.X.production.o
+__size_of_photoFetOff 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+__ptext1 588 0 CODE 0 text1 dist/default/production\Relay_Bypass_Latching.X.production.o
+__ptext2 56A 0 CODE 0 text2 dist/default/production\Relay_Bypass_Latching.X.production.o
+__ptext3 61E 0 CODE 0 text3 dist/default/production\Relay_Bypass_Latching.X.production.o
+__ptext4 564 0 CODE 0 text4 dist/default/production\Relay_Bypass_Latching.X.production.o
+__ptext5 55E 0 CODE 0 text5 dist/default/production\Relay_Bypass_Latching.X.production.o
+__ptext6 5D4 0 CODE 0 text6 dist/default/production\Relay_Bypass_Latching.X.production.o
+__ptext7 558 0 CODE 0 text7 dist/default/production\Relay_Bypass_Latching.X.production.o
+__ptext8 552 0 CODE 0 text8 dist/default/production\Relay_Bypass_Latching.X.production.o
+__ptext9 54C 0 CODE 0 text9 dist/default/production\Relay_Bypass_Latching.X.production.o
+_pedalOn 61E 0 CODE 0 text3 dist/default/production\Relay_Bypass_Latching.X.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__end_of__initialization 7FA 0 CODE 0 cinit dist/default/production\Relay_Bypass_Latching.X.production.o
+_delay_ms 5A6 0 CODE 0 text13 dist/default/production\Relay_Bypass_Latching.X.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+_pedalOff 5D4 0 CODE 0 text6 dist/default/production\Relay_Bypass_Latching.X.production.o
+_photoFetOn 54C 0 CODE 0 text9 dist/default/production\Relay_Bypass_Latching.X.production.o
+__Lclrtext 7FE 0 ABS 0 clrtext -
+__end_of_delay_ms 5D4 0 CODE 0 text13 dist/default/production\Relay_Bypass_Latching.X.production.o
+__end_of_pedalOff 61E 0 CODE 0 text6 dist/default/production\Relay_Bypass_Latching.X.production.o
+__pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/production\Relay_Bypass_Latching.X.production.o
+_negativeRelayOn 564 0 CODE 0 text4 dist/default/production\Relay_Bypass_Latching.X.production.o
+__Hend_init A 0 CODE 0 end_init -
+__end_of_main 7FA 0 CODE 0 maintext dist/default/production\Relay_Bypass_Latching.X.production.o
+_ANSEL 9F 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+_CMCON 19 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+__size_of_positiveRelayOn 0 0 ABS 0 - dist/default/production\Relay_Bypass_Latching.X.production.o
+__end_of_ledOn 564 0 CODE 0 text5 dist/default/production\Relay_Bypass_Latching.X.production.o
+__Hram 7FE 0 ABS 0 ram -
+__Lram 7FE 0 ABS 0 ram -
+_ledOn 55E 0 CODE 0 text5 dist/default/production\Relay_Bypass_Latching.X.production.o
+__initialization 7FA 0 CODE 0 cinit dist/default/production\Relay_Bypass_Latching.X.production.o
+__end_of_photoFetOn 552 0 CODE 0 text9 dist/default/production\Relay_Bypass_Latching.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 5E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 3FD 7FA 2 2
+text1 0 2C4 588 F 2
+text2 0 2B5 56A F 2
+text3 0 30F 61E 25 2
+text4 0 2B2 564 3 2
+text5 0 2AF 55E 3 2
+text6 0 2EA 5D4 25 2
+text7 0 2AC 558 3 2
+text8 0 2A9 552 3 2
+text9 0 2A6 54C 3 2
+text10 0 2A3 546 3 2
+text11 0 2A0 540 3 2
+text12 0 29D 53A 3 2
+text13 0 2D3 5A6 17 2
+maintext 0 334 668 C9 2
+cstackBANK0 1 20 20 10 1
+reset_vec 0 0 0 5 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

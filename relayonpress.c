@@ -20,7 +20,7 @@ void main ( void ) {
     // Initialise PIC
     ANSEL = OFF; // no analog GPIOs
     CMCON = 0x07; // comparator off
-    ADCON0 = OFF; // Analog to Digital and Digital to Analog convertors off
+    ADCON0 = OFF; // analog to digital and digital to analog convertors off
 
     // Configure IO
     // PIC pin 8 GND
@@ -35,7 +35,7 @@ void main ( void ) {
     GPIO = LOW; // set outputs as low level (0V)
 
     // Variables definition
-    uint8_t state; // on-off state of the pedal (1 = on, 0 = off)
+    int8_t state; // on-off state of the pedal (1 = on, 0 = off)
     uint8_t startupOption; // startup option switch state (1 = on, 0 = off)
     uint8_t switchStatus; // variable to detect if the switch is pressed
     uint8_t statusChangeAllowed; // allow switch operation to change pedal state
@@ -57,12 +57,12 @@ void main ( void ) {
 
     // Flash LED, twice if startup option off, three times if startup option on
     // One flash
-    flashLed( 500 );
+    flashLed( 125 );
     // Two flashes
-    flashLed( 500 );
+    flashLed( 125 );
     // Third flash
     if ( startupOption == ON ) {
-        flashLed( 500 );
+        flashLed( 125 );
         state = changePedalState( ON ); // turn pedal on (startup option)
     } else {
         state = changePedalState( OFF ); // turn pedal off
@@ -81,11 +81,11 @@ void main ( void ) {
                     downCount++;
                 } else {
                     downCount = 0;
-                    i = 0;
+                    i = 1;
                 }
                 i--;
             }
-            if ( downCount > 14 ) { // switch constantly down for 15ms
+            if ( downCount > 14 ) { // switch constantly down for at least 15ms
                 downCount = 0;
                 if ( switchStatus != ON ) {
                     switchStatus = ON;
@@ -103,11 +103,11 @@ void main ( void ) {
                     upCount++;
                 } else {
                     upCount = 0;
-                    i = 0;
+                    i = 1;
                 }
                 i--;
             }
-            if ( upCount > 14 ) { // switch constantly up for 15ms
+            if ( upCount > 14 ) { // switch constantly up for at least 15ms
                 upCount = 0;
                 if ( switchStatus != OFF ) {
                     switchStatus = OFF;
@@ -216,7 +216,7 @@ uint8_t pedalOff ( uint8_t delayInMs ) { // 255 max
     return OFF;
 }
 
-uint8_t changePedalState ( uint8_t state ) {
+int8_t changePedalState ( int8_t state ) {
 
     if ( state == ON ) {
         pedalOn( 15 );
@@ -227,4 +227,3 @@ uint8_t changePedalState ( uint8_t state ) {
     }
 
 }
-

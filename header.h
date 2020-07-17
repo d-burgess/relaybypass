@@ -40,4 +40,4 @@ void positiveRelayOff ( void );
 void flashLed ( uint16_t delayInMs );
 uint8_t pedalOn ( uint8_t delayInMs );
 uint8_t pedalOff ( uint8_t delayInMs );
-uint8_t changePedalState ( uint8_t state );
+int8_t changePedalState ( int8_t state );

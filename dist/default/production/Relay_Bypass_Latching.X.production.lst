@@ -1,0 +1,1838 @@
+
+
+Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
+                                                                                               Thu Jul 16 13:13:38 2020
+
+Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1 
+     1                           	processor	12F675
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     6                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+     7                           	psect	maintext,global,class=CODE,split=1,delta=2
+     8                           	psect	text1,local,class=CODE,merge=1,delta=2
+     9                           	psect	text2,local,class=CODE,merge=1,delta=2
+    10                           	psect	text3,local,class=CODE,merge=1,delta=2
+    11                           	psect	text4,local,class=CODE,merge=1,delta=2
+    12                           	psect	text5,local,class=CODE,merge=1,delta=2
+    13                           	psect	text6,local,class=CODE,merge=1,delta=2
+    14                           	psect	text7,local,class=CODE,merge=1,delta=2
+    15                           	psect	text8,local,class=CODE,merge=1,delta=2
+    16                           	psect	text9,local,class=CODE,merge=1,delta=2
+    17                           	psect	text10,local,class=CODE,merge=1,delta=2
+    18                           	psect	text11,local,class=CODE,merge=1,delta=2
+    19                           	psect	text12,local,class=CODE,merge=1,delta=2
+    20                           	psect	text13,local,class=CODE,merge=1,delta=2
+    21                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    22                           	dabs	1,0x5E,2
+    23  0000                     
+    24                           ; Version 2.20
+    25                           ; Generated 29/04/2020 GMT
+    26                           ; 
+    27                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    28                           ; All rights reserved.
+    29                           ; 
+    30                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    31                           ; 
+    32                           ; Redistribution and use in source and binary forms, with or without modification, are
+    33                           ; permitted provided that the following conditions are met:
+    34                           ; 
+    35                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    36                           ;        conditions and the following disclaimer.
+    37                           ; 
+    38                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    39                           ;        of conditions and the following disclaimer in the documentation and/or other
+    40                           ;        materials provided with the distribution.
+    41                           ; 
+    42                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    43                           ;        software without specific prior written permission.
+    44                           ; 
+    45                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    46                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    47                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    48                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    49                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    50                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    51                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    52                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    53                           ; 
+    54                           ; 
+    55                           ; Code-generator required, PIC12F675 Definitions
+    56                           ; 
+    57                           ; SFR Addresses
+    58  0000                     	;# 
+    59  0001                     	;# 
+    60  0002                     	;# 
+    61  0003                     	;# 
+    62  0004                     	;# 
+    63  0005                     	;# 
+    64  000A                     	;# 
+    65  000B                     	;# 
+    66  000C                     	;# 
+    67  000E                     	;# 
+    68  000E                     	;# 
+    69  000F                     	;# 
+    70  0010                     	;# 
+    71  0019                     	;# 
+    72  001E                     	;# 
+    73  001F                     	;# 
+    74  0081                     	;# 
+    75  0085                     	;# 
+    76  008C                     	;# 
+    77  008E                     	;# 
+    78  0090                     	;# 
+    79  0095                     	;# 
+    80  0096                     	;# 
+    81  0096                     	;# 
+    82  0099                     	;# 
+    83  009A                     	;# 
+    84  009A                     	;# 
+    85  009B                     	;# 
+    86  009C                     	;# 
+    87  009D                     	;# 
+    88  009E                     	;# 
+    89  009F                     	;# 
+    90  0000                     	;# 
+    91  0001                     	;# 
+    92  0002                     	;# 
+    93  0003                     	;# 
+    94  0004                     	;# 
+    95  0005                     	;# 
+    96  000A                     	;# 
+    97  000B                     	;# 
+    98  000C                     	;# 
+    99  000E                     	;# 
+   100  000E                     	;# 
+   101  000F                     	;# 
+   102  0010                     	;# 
+   103  0019                     	;# 
+   104  001E                     	;# 
+   105  001F                     	;# 
+   106  0081                     	;# 
+   107  0085                     	;# 
+   108  008C                     	;# 
+   109  008E                     	;# 
+   110  0090                     	;# 
+   111  0095                     	;# 
+   112  0096                     	;# 
+   113  0096                     	;# 
+   114  0099                     	;# 
+   115  009A                     	;# 
+   116  009A                     	;# 
+   117  009B                     	;# 
+   118  009C                     	;# 
+   119  009D                     	;# 
+   120  009E                     	;# 
+   121  009F                     	;# 
+   122  0005                     _GPIO	set	5
+   123  001F                     _ADCON0	set	31
+   124  0019                     _CMCON	set	25
+   125  002C                     _GP4	set	44
+   126  002A                     _GP2	set	42
+   127  0028                     _GP0	set	40
+   128  002D                     _GP5	set	45
+   129  0029                     _GP1	set	41
+   130  002B                     _GP3	set	43
+   131  009F                     _ANSEL	set	159
+   132  042D                     _TRISIO5	set	1069
+   133  042C                     _TRISIO4	set	1068
+   134  042B                     _TRISIO3	set	1067
+   135  042A                     _TRISIO2	set	1066
+   136  0429                     _TRISIO1	set	1065
+   137  0428                     _TRISIO0	set	1064
+   138                           
+   139                           	psect	cinit
+   140  03FD                     start_initialization:	
+   141                           ; #config settings
+   142                           
+   143  03FD                     __initialization:
+   144  03FD                     end_of_initialization:	
+   145                           ;End of C runtime variable initialization code
+   146                           
+   147  03FD                     __end_of__initialization:
+   148  03FD  0183               	clrf	3
+   149  03FE  2B34               	ljmp	_main	;jump to C main() function
+   150                           
+   151                           	psect	cstackCOMMON
+   152  0000                     __pcstackCOMMON:
+   153  0000                     ??_flashLed:
+   154  0000                     ??_changePedalState:	
+   155                           ; 1 bytes @ 0x0
+   156                           
+   157  0000                     ??_photoFetOn:	
+   158                           ; 1 bytes @ 0x0
+   159                           
+   160  0000                     ??_photoFetOff:	
+   161                           ; 1 bytes @ 0x0
+   162                           
+   163  0000                     ??_ledOn:	
+   164                           ; 1 bytes @ 0x0
+   165                           
+   166  0000                     ??_ledOff:	
+   167                           ; 1 bytes @ 0x0
+   168                           
+   169  0000                     ??_negativeRelayOn:	
+   170                           ; 1 bytes @ 0x0
+   171                           
+   172  0000                     ??_negativeRelayOff:	
+   173                           ; 1 bytes @ 0x0
+   174                           
+   175  0000                     ??_positiveRelayOn:	
+   176                           ; 1 bytes @ 0x0
+   177                           
+   178  0000                     ??_positiveRelayOff:	
+   179                           ; 1 bytes @ 0x0
+   180                           
+   181                           
+   182                           	psect	cstackBANK0
+   183  0020                     __pcstackBANK0:	
+   184                           ; 1 bytes @ 0x0
+   185                           
+   186  0020                     ?_changePedalState:
+   187  0020                     ?_main:	
+   188                           ; 1 bytes @ 0x0
+   189                           
+   190  0020                     ?_delay_ms:	
+   191                           ; 1 bytes @ 0x0
+   192                           
+   193  0020                     ?_photoFetOn:	
+   194                           ; 1 bytes @ 0x0
+   195                           
+   196  0020                     ?_photoFetOff:	
+   197                           ; 1 bytes @ 0x0
+   198                           
+   199  0020                     ?_ledOn:	
+   200                           ; 1 bytes @ 0x0
+   201                           
+   202  0020                     ?_ledOff:	
+   203                           ; 1 bytes @ 0x0
+   204                           
+   205  0020                     ?_negativeRelayOn:	
+   206                           ; 1 bytes @ 0x0
+   207                           
+   208  0020                     ?_negativeRelayOff:	
+   209                           ; 1 bytes @ 0x0
+   210                           
+   211  0020                     ?_positiveRelayOn:	
+   212                           ; 1 bytes @ 0x0
+   213                           
+   214  0020                     ?_positiveRelayOff:	
+   215                           ; 1 bytes @ 0x0
+   216                           
+   217  0020                     ?_pedalOn:	
+   218                           ; 1 bytes @ 0x0
+   219                           
+   220  0020                     ?_pedalOff:	
+   221                           ; 1 bytes @ 0x0
+   222                           
+   223  0020                     delay_ms@milliseconds:	
+   224                           ; 1 bytes @ 0x0
+   225                           
+   226                           
+   227                           ; 2 bytes @ 0x0
+   228  0020                     	ds	2
+   229  0022                     ??_delay_ms:
+   230                           
+   231                           ; 1 bytes @ 0x2
+   232  0022                     	ds	1
+   233  0023                     ?_flashLed:
+   234  0023                     ??_pedalOn:	
+   235                           ; 1 bytes @ 0x3
+   236                           
+   237  0023                     ??_pedalOff:	
+   238                           ; 1 bytes @ 0x3
+   239                           
+   240  0023                     flashLed@delayInMs:	
+   241                           ; 1 bytes @ 0x3
+   242                           
+   243                           
+   244                           ; 2 bytes @ 0x3
+   245  0023                     	ds	2
+   246  0025                     pedalOn@delayInMs:
+   247  0025                     pedalOff@delayInMs:	
+   248                           ; 1 bytes @ 0x5
+   249                           
+   250                           
+   251                           ; 1 bytes @ 0x5
+   252  0025                     	ds	1
+   253  0026                     changePedalState@state:
+   254                           
+   255                           ; 1 bytes @ 0x6
+   256  0026                     	ds	1
+   257  0027                     ??_main:
+   258                           
+   259                           ; 1 bytes @ 0x7
+   260  0027                     	ds	2
+   261  0029                     main@startupOption:
+   262                           
+   263                           ; 1 bytes @ 0x9
+   264  0029                     	ds	1
+   265  002A                     main@state:
+   266                           
+   267                           ; 1 bytes @ 0xA
+   268  002A                     	ds	1
+   269  002B                     main@downCount:
+   270                           
+   271                           ; 1 bytes @ 0xB
+   272  002B                     	ds	1
+   273  002C                     main@upCount:
+   274                           
+   275                           ; 1 bytes @ 0xC
+   276  002C                     	ds	1
+   277  002D                     main@statusChangeAllowed:
+   278                           
+   279                           ; 1 bytes @ 0xD
+   280  002D                     	ds	1
+   281  002E                     main@i:
+   282                           
+   283                           ; 1 bytes @ 0xE
+   284  002E                     	ds	1
+   285  002F                     main@switchStatus:
+   286                           
+   287                           ; 1 bytes @ 0xF
+   288  002F                     	ds	1
+   289                           
+   290                           	psect	maintext
+   291  0334                     __pmaintext:	
+   292 ;;
+   293 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   294 ;;
+   295 ;; *************** function _main *****************
+   296 ;; Defined at:
+   297 ;;		line 18 in file "relayonpress.c"
+   298 ;; Parameters:    Size  Location     Type
+   299 ;;		None
+   300 ;; Auto vars:     Size  Location     Type
+   301 ;;  switchStatus    1   15[BANK0 ] unsigned char 
+   302 ;;  i               1   14[BANK0 ] unsigned char 
+   303 ;;  statusChange    1   13[BANK0 ] unsigned char 
+   304 ;;  upCount         1   12[BANK0 ] unsigned char 
+   305 ;;  downCount       1   11[BANK0 ] unsigned char 
+   306 ;;  state           1   10[BANK0 ] char 
+   307 ;;  startupOptio    1    9[BANK0 ] unsigned char 
+   308 ;; Return value:  Size  Location     Type
+   309 ;;                  1    wreg      void 
+   310 ;; Registers used:
+   311 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+   312 ;; Tracked objects:
+   313 ;;		On entry : B00/0
+   314 ;;		On exit  : 0/0
+   315 ;;		Unchanged: 0/0
+   316 ;; Data sizes:     COMMON   BANK0
+   317 ;;      Params:         0       0
+   318 ;;      Locals:         0       7
+   319 ;;      Temps:          0       2
+   320 ;;      Totals:         0       9
+   321 ;;Total ram usage:        9 bytes
+   322 ;; Hardware stack levels required when called:    3
+   323 ;; This function calls:
+   324 ;;		_changePedalState
+   325 ;;		_flashLed
+   326 ;; This function is called by:
+   327 ;;		Startup code after reset
+   328 ;; This function uses a non-reentrant model
+   329 ;;
+   330                           
+   331                           
+   332                           ;psect for function _main
+   333  0334                     _main:
+   334  0334                     l970:	
+   335                           ;incstack = 0
+   336                           ; Regs used in _main: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+   337                           
+   338                           
+   339                           ;relayonpress.c: 21: ANSEL = 0;
+   340  0334  1683               	bsf	3,5	;RP0=1, select bank1
+   341  0335  019F               	clrf	31	;volatile
+   342  0336                     l972:
+   343                           
+   344                           ;relayonpress.c: 22: CMCON = 0x07;
+   345  0336  3007               	movlw	7
+   346  0337  1283               	bcf	3,5	;RP0=0, select bank0
+   347  0338  0099               	movwf	25	;volatile
+   348  0339                     l974:
+   349                           
+   350                           ;relayonpress.c: 23: ADCON0 = 0;
+   351  0339  019F               	clrf	31	;volatile
+   352  033A                     l976:
+   353                           
+   354                           ;relayonpress.c: 27: TRISIO0 = 0;
+   355  033A  1683               	bsf	3,5	;RP0=1, select bank1
+   356  033B  1005               	bcf	5,0	;volatile
+   357  033C                     l978:
+   358                           
+   359                           ;relayonpress.c: 28: TRISIO1 = 1;
+   360  033C  1485               	bsf	5,1	;volatile
+   361  033D                     l980:
+   362                           
+   363                           ;relayonpress.c: 29: TRISIO2 = 0;
+   364  033D  1105               	bcf	5,2	;volatile
+   365  033E                     l982:
+   366                           
+   367                           ;relayonpress.c: 30: TRISIO3 = 1;
+   368  033E  1585               	bsf	5,3	;volatile
+   369  033F                     l984:
+   370                           
+   371                           ;relayonpress.c: 31: TRISIO4 = 0;
+   372  033F  1205               	bcf	5,4	;volatile
+   373  0340                     l986:
+   374                           
+   375                           ;relayonpress.c: 32: TRISIO5 = 0;
+   376  0340  1285               	bcf	5,5	;volatile
+   377  0341                     l988:
+   378                           
+   379                           ;relayonpress.c: 35: GPIO = 0;
+   380  0341  1283               	bcf	3,5	;RP0=0, select bank0
+   381  0342  0185               	clrf	5	;volatile
+   382  0343                     l990:
+   383                           
+   384                           ;relayonpress.c: 38: int8_t state;;relayonpress.c: 39: uint8_t startupOption;;relayonpre
+      +                          ss.c: 40: uint8_t switchStatus;;relayonpress.c: 41: uint8_t statusChangeAllowed;;relayon
+      +                          press.c: 42: uint8_t i;;relayonpress.c: 43: uint8_t downCount;;relayonpress.c: 44: uint8
+      +                          _t upCount;;relayonpress.c: 48: if ( GP3 == 0 ) {
+   385  0343  1985               	btfsc	5,3	;volatile
+   386  0344  2B46               	goto	u221
+   387  0345  2B47               	goto	u220
+   388  0346                     u221:
+   389  0346  2B4A               	goto	l994
+   390  0347                     u220:
+   391  0347                     l992:
+   392                           
+   393                           ;relayonpress.c: 49: startupOption = 1;
+   394  0347  01A9               	clrf	main@startupOption
+   395  0348  0AA9               	incf	main@startupOption,f
+   396                           
+   397                           ;relayonpress.c: 50: } else {
+   398  0349  2B4B               	goto	l44
+   399  034A                     l994:
+   400                           
+   401                           ;relayonpress.c: 51: startupOption = 0;
+   402  034A  01A9               	clrf	main@startupOption
+   403  034B                     l44:
+   404                           
+   405                           ;relayonpress.c: 52: };relayonpress.c: 55: switchStatus = 0;
+   406  034B  01AF               	clrf	main@switchStatus
+   407                           
+   408                           ;relayonpress.c: 56: statusChangeAllowed = 0;
+   409  034C  01AD               	clrf	main@statusChangeAllowed
+   410  034D                     l996:
+   411                           
+   412                           ;relayonpress.c: 60: flashLed( 125 );
+   413  034D  307D               	movlw	125
+   414  034E  00A3               	movwf	flashLed@delayInMs
+   415  034F  3000               	movlw	0
+   416  0350  00A4               	movwf	flashLed@delayInMs+1
+   417  0351  22C4               	fcall	_flashLed
+   418  0352                     l998:
+   419                           
+   420                           ;relayonpress.c: 62: flashLed( 125 );
+   421  0352  307D               	movlw	125
+   422  0353  1283               	bcf	3,5	;RP0=0, select bank0
+   423  0354  00A3               	movwf	flashLed@delayInMs
+   424  0355  3000               	movlw	0
+   425  0356  00A4               	movwf	flashLed@delayInMs+1
+   426  0357  22C4               	fcall	_flashLed
+   427  0358                     l1000:
+   428                           
+   429                           ;relayonpress.c: 64: if ( startupOption == 1 ) {
+   430  0358  1283               	bcf	3,5	;RP0=0, select bank0
+   431  0359  0329               	decf	main@startupOption,w
+   432  035A  1D03               	btfss	3,2
+   433  035B  2B5D               	goto	u231
+   434  035C  2B5E               	goto	u230
+   435  035D                     u231:
+   436  035D  2B6A               	goto	l1006
+   437  035E                     u230:
+   438  035E                     l1002:
+   439                           
+   440                           ;relayonpress.c: 65: flashLed( 125 );
+   441  035E  307D               	movlw	125
+   442  035F  00A3               	movwf	flashLed@delayInMs
+   443  0360  3000               	movlw	0
+   444  0361  00A4               	movwf	flashLed@delayInMs+1
+   445  0362  22C4               	fcall	_flashLed
+   446  0363                     l1004:
+   447                           
+   448                           ;relayonpress.c: 66: state = changePedalState( 1 );
+   449  0363  3001               	movlw	1
+   450  0364  22B5               	fcall	_changePedalState
+   451  0365  00DF               	movwf	btemp+1
+   452  0366  085F               	movf	btemp+1,w
+   453  0367  1283               	bcf	3,5	;RP0=0, select bank0
+   454  0368  00AA               	movwf	main@state
+   455                           
+   456                           ;relayonpress.c: 67: } else {
+   457  0369  2B70               	goto	l1008
+   458  036A                     l1006:
+   459                           
+   460                           ;relayonpress.c: 68: state = changePedalState( 0 );
+   461  036A  3000               	movlw	0
+   462  036B  22B5               	fcall	_changePedalState
+   463  036C  00DF               	movwf	btemp+1
+   464  036D  085F               	movf	btemp+1,w
+   465  036E  1283               	bcf	3,5	;RP0=0, select bank0
+   466  036F  00AA               	movwf	main@state
+   467  0370                     l1008:
+   468                           
+   469                           ;relayonpress.c: 75: if ( GP1 == 0 ) {
+   470  0370  1885               	btfsc	5,1	;volatile
+   471  0371  2B73               	goto	u241
+   472  0372  2B74               	goto	u240
+   473  0373                     u241:
+   474  0373  2BA2               	goto	l48
+   475  0374                     u240:
+   476  0374                     l1010:
+   477                           
+   478                           ;relayonpress.c: 76: i = 15;
+   479  0374  300F               	movlw	15
+   480  0375  00DF               	movwf	btemp+1
+   481  0376  085F               	movf	btemp+1,w
+   482  0377  00AE               	movwf	main@i
+   483  0378                     l1012:
+   484                           
+   485                           ;relayonpress.c: 77: downCount = 0;
+   486  0378  01AB               	clrf	main@downCount
+   487                           
+   488                           ;relayonpress.c: 78: while ( i > 0 ) {
+   489  0379  2B90               	goto	l1026
+   490  037A                     l1014:
+   491                           
+   492                           ;relayonpress.c: 79: _delay((unsigned long)((1)*(4000000/4000.0)));
+   493  037A  30C7               	movlw	199
+   494  037B  00A7               	movwf	??_main
+   495  037C                     u397:
+   496  037C  2B7D               	nop2
+   497  037D  0BA7               	decfsz	??_main,f
+   498  037E  2B7C               	goto	u397
+   499  037F  2B80               	nop2
+   500  0380  2B81               	nop2
+   501  0381                     l1016:
+   502                           
+   503                           ;relayonpress.c: 80: if ( GP1 == 0 ) {
+   504  0381  1283               	bcf	3,5	;RP0=0, select bank0
+   505  0382  1885               	btfsc	5,1	;volatile
+   506  0383  2B85               	goto	u251
+   507  0384  2B86               	goto	u250
+   508  0385                     u251:
+   509  0385  2B8B               	goto	l1020
+   510  0386                     u250:
+   511  0386                     l1018:
+   512                           
+   513                           ;relayonpress.c: 81: downCount++;
+   514  0386  3001               	movlw	1
+   515  0387  00DF               	movwf	btemp+1
+   516  0388  085F               	movf	btemp+1,w
+   517  0389  07AB               	addwf	main@downCount,f
+   518                           
+   519                           ;relayonpress.c: 82: } else {
+   520  038A  2B8E               	goto	l1024
+   521  038B                     l1020:
+   522                           
+   523                           ;relayonpress.c: 83: downCount = 0;
+   524  038B  01AB               	clrf	main@downCount
+   525  038C                     l1022:
+   526                           
+   527                           ;relayonpress.c: 84: i = 1;
+   528  038C  01AE               	clrf	main@i
+   529  038D  0AAE               	incf	main@i,f
+   530  038E                     l1024:
+   531                           
+   532                           ;relayonpress.c: 85: };relayonpress.c: 86: i--;
+   533  038E  3001               	movlw	1
+   534  038F  02AE               	subwf	main@i,f
+   535  0390                     l1026:
+   536  0390  082E               	movf	main@i,w
+   537  0391  1D03               	btfss	3,2
+   538  0392  2B94               	goto	u261
+   539  0393  2B95               	goto	u260
+   540  0394                     u261:
+   541  0394  2B7A               	goto	l1014
+   542  0395                     u260:
+   543  0395                     l1028:
+   544                           
+   545                           ;relayonpress.c: 87: };relayonpress.c: 88: if ( downCount > 14 ) {
+   546  0395  300F               	movlw	15
+   547  0396  022B               	subwf	main@downCount,w
+   548  0397  1C03               	skipc
+   549  0398  2B9A               	goto	u271
+   550  0399  2B9B               	goto	u270
+   551  039A                     u271:
+   552  039A  2BA2               	goto	l48
+   553  039B                     u270:
+   554  039B                     l1030:
+   555  039B                     l1032:
+   556                           
+   557                           ;relayonpress.c: 90: if ( switchStatus != 1 ) {
+   558  039B  032F               	decf	main@switchStatus,w
+   559  039C  1903               	btfsc	3,2
+   560  039D  2B9F               	goto	u281
+   561  039E  2BA0               	goto	u280
+   562  039F                     u281:
+   563  039F  2BA2               	goto	l48
+   564  03A0                     u280:
+   565  03A0                     l1034:
+   566                           
+   567                           ;relayonpress.c: 91: switchStatus = 1;
+   568  03A0  01AF               	clrf	main@switchStatus
+   569  03A1  0AAF               	incf	main@switchStatus,f
+   570  03A2                     l48:
+   571                           
+   572                           ;relayonpress.c: 92: };relayonpress.c: 93: };relayonpress.c: 94: };relayonpress.c: 97: i
+      +                          f ( GP1 == 1 ) {
+   573  03A2  1C85               	btfss	5,1	;volatile
+   574  03A3  2BA5               	goto	u291
+   575  03A4  2BA6               	goto	u290
+   576  03A5                     u291:
+   577  03A5  2BDA               	goto	l1066
+   578  03A6                     u290:
+   579  03A6                     l1036:
+   580                           
+   581                           ;relayonpress.c: 98: i = 15;
+   582  03A6  300F               	movlw	15
+   583  03A7  00DF               	movwf	btemp+1
+   584  03A8  085F               	movf	btemp+1,w
+   585  03A9  00AE               	movwf	main@i
+   586  03AA                     l1038:
+   587                           
+   588                           ;relayonpress.c: 99: upCount = 0;
+   589  03AA  01AC               	clrf	main@upCount
+   590                           
+   591                           ;relayonpress.c: 100: while ( i > 0 ) {
+   592  03AB  2BC2               	goto	l1052
+   593  03AC                     l1040:
+   594                           
+   595                           ;relayonpress.c: 101: _delay((unsigned long)((1)*(4000000/4000.0)));
+   596  03AC  30C7               	movlw	199
+   597  03AD  00A7               	movwf	??_main
+   598  03AE                     u407:
+   599  03AE  2BAF               	nop2
+   600  03AF  0BA7               	decfsz	??_main,f
+   601  03B0  2BAE               	goto	u407
+   602  03B1  2BB2               	nop2
+   603  03B2  2BB3               	nop2
+   604  03B3                     l1042:
+   605                           
+   606                           ;relayonpress.c: 102: if ( GP1 == 1 ) {
+   607  03B3  1283               	bcf	3,5	;RP0=0, select bank0
+   608  03B4  1C85               	btfss	5,1	;volatile
+   609  03B5  2BB7               	goto	u301
+   610  03B6  2BB8               	goto	u300
+   611  03B7                     u301:
+   612  03B7  2BBD               	goto	l1046
+   613  03B8                     u300:
+   614  03B8                     l1044:
+   615                           
+   616                           ;relayonpress.c: 103: upCount++;
+   617  03B8  3001               	movlw	1
+   618  03B9  00DF               	movwf	btemp+1
+   619  03BA  085F               	movf	btemp+1,w
+   620  03BB  07AC               	addwf	main@upCount,f
+   621                           
+   622                           ;relayonpress.c: 104: } else {
+   623  03BC  2BC0               	goto	l1050
+   624  03BD                     l1046:
+   625                           
+   626                           ;relayonpress.c: 105: upCount = 0;
+   627  03BD  01AC               	clrf	main@upCount
+   628  03BE                     l1048:
+   629                           
+   630                           ;relayonpress.c: 106: i = 1;
+   631  03BE  01AE               	clrf	main@i
+   632  03BF  0AAE               	incf	main@i,f
+   633  03C0                     l1050:
+   634                           
+   635                           ;relayonpress.c: 107: };relayonpress.c: 108: i--;
+   636  03C0  3001               	movlw	1
+   637  03C1  02AE               	subwf	main@i,f
+   638  03C2                     l1052:
+   639  03C2  082E               	movf	main@i,w
+   640  03C3  1D03               	btfss	3,2
+   641  03C4  2BC6               	goto	u311
+   642  03C5  2BC7               	goto	u310
+   643  03C6                     u311:
+   644  03C6  2BAC               	goto	l1040
+   645  03C7                     u310:
+   646  03C7                     l1054:
+   647                           
+   648                           ;relayonpress.c: 109: };relayonpress.c: 110: if ( upCount > 14 ) {
+   649  03C7  300F               	movlw	15
+   650  03C8  022C               	subwf	main@upCount,w
+   651  03C9  1C03               	skipc
+   652  03CA  2BCC               	goto	u321
+   653  03CB  2BCD               	goto	u320
+   654  03CC                     u321:
+   655  03CC  2BDA               	goto	l1066
+   656  03CD                     u320:
+   657  03CD                     l1056:
+   658  03CD                     l1058:
+   659                           
+   660                           ;relayonpress.c: 112: if ( switchStatus != 0 ) {
+   661  03CD  082F               	movf	main@switchStatus,w
+   662  03CE  1903               	btfsc	3,2
+   663  03CF  2BD1               	goto	u331
+   664  03D0  2BD2               	goto	u330
+   665  03D1                     u331:
+   666  03D1  2BD3               	goto	l1062
+   667  03D2                     u330:
+   668  03D2                     l1060:
+   669                           
+   670                           ;relayonpress.c: 113: switchStatus = 0;
+   671  03D2  01AF               	clrf	main@switchStatus
+   672  03D3                     l1062:
+   673                           
+   674                           ;relayonpress.c: 114: };relayonpress.c: 115: if ( statusChangeAllowed != 1 ) {
+   675  03D3  032D               	decf	main@statusChangeAllowed,w
+   676  03D4  1903               	btfsc	3,2
+   677  03D5  2BD7               	goto	u341
+   678  03D6  2BD8               	goto	u340
+   679  03D7                     u341:
+   680  03D7  2BDA               	goto	l1066
+   681  03D8                     u340:
+   682  03D8                     l1064:
+   683                           
+   684                           ;relayonpress.c: 116: statusChangeAllowed = 1;
+   685  03D8  01AD               	clrf	main@statusChangeAllowed
+   686  03D9  0AAD               	incf	main@statusChangeAllowed,f
+   687  03DA                     l1066:
+   688                           
+   689                           ;relayonpress.c: 117: };relayonpress.c: 118: };relayonpress.c: 119: };relayonpress.c: 12
+      +                          2: if ( ( switchStatus == 1 ) && ( statusChangeAllowed == 1 ) ) {
+   690  03DA  032F               	decf	main@switchStatus,w
+   691  03DB  1D03               	btfss	3,2
+   692  03DC  2BDE               	goto	u351
+   693  03DD  2BDF               	goto	u350
+   694  03DE                     u351:
+   695  03DE  2B70               	goto	l1008
+   696  03DF                     u350:
+   697  03DF                     l1068:
+   698  03DF  032D               	decf	main@statusChangeAllowed,w
+   699  03E0  1D03               	btfss	3,2
+   700  03E1  2BE3               	goto	u361
+   701  03E2  2BE4               	goto	u360
+   702  03E3                     u361:
+   703  03E3  2B70               	goto	l1008
+   704  03E4                     u360:
+   705  03E4                     l1070:
+   706                           
+   707                           ;relayonpress.c: 123: state = changePedalState( !( state ) );
+   708  03E4  082A               	movf	main@state,w
+   709  03E5  1903               	btfsc	3,2
+   710  03E6  2BE8               	goto	u371
+   711  03E7  2BEA               	goto	u370
+   712  03E8                     u371:
+   713  03E8  3001               	movlw	1
+   714  03E9  2BEB               	goto	u380
+   715  03EA                     u370:
+   716  03EA  3000               	movlw	0
+   717  03EB                     u380:
+   718  03EB  22B5               	fcall	_changePedalState
+   719  03EC  00DF               	movwf	btemp+1
+   720  03ED  085F               	movf	btemp+1,w
+   721  03EE  1283               	bcf	3,5	;RP0=0, select bank0
+   722  03EF  00AA               	movwf	main@state
+   723  03F0                     l1072:
+   724                           
+   725                           ;relayonpress.c: 124: _delay((unsigned long)((10)*(4000000/4000.0)));
+   726  03F0  300D               	movlw	13
+   727  03F1  00A8               	movwf	??_main+1
+   728  03F2  30FB               	movlw	251
+   729  03F3  00A7               	movwf	??_main
+   730  03F4                     u417:
+   731  03F4  0BA7               	decfsz	??_main,f
+   732  03F5  2BF4               	goto	u417
+   733  03F6  0BA8               	decfsz	??_main+1,f
+   734  03F7  2BF4               	goto	u417
+   735  03F8  2BF9               	nop2
+   736  03F9                     l1074:
+   737                           
+   738                           ;relayonpress.c: 125: statusChangeAllowed = 0;
+   739  03F9  1283               	bcf	3,5	;RP0=0, select bank0
+   740  03FA  01AD               	clrf	main@statusChangeAllowed
+   741  03FB  2B70               	goto	l1008
+   742  03FC  2800               	ljmp	start
+   743  03FD                     __end_of_main:
+   744                           
+   745                           	psect	text1
+   746  02C4                     __ptext1:	
+   747 ;; *************** function _flashLed *****************
+   748 ;; Defined at:
+   749 ;;		line 173 in file "relayonpress.c"
+   750 ;; Parameters:    Size  Location     Type
+   751 ;;  delayInMs       2    3[BANK0 ] unsigned int 
+   752 ;; Auto vars:     Size  Location     Type
+   753 ;;		None
+   754 ;; Return value:  Size  Location     Type
+   755 ;;                  1    wreg      void 
+   756 ;; Registers used:
+   757 ;;		wreg, status,2, status,0, pclath, cstack
+   758 ;; Tracked objects:
+   759 ;;		On entry : 0/0
+   760 ;;		On exit  : 0/0
+   761 ;;		Unchanged: 0/0
+   762 ;; Data sizes:     COMMON   BANK0
+   763 ;;      Params:         0       2
+   764 ;;      Locals:         0       0
+   765 ;;      Temps:          0       0
+   766 ;;      Totals:         0       2
+   767 ;;Total ram usage:        2 bytes
+   768 ;; Hardware stack levels used:    1
+   769 ;; Hardware stack levels required when called:    1
+   770 ;; This function calls:
+   771 ;;		_delay_ms
+   772 ;;		_ledOff
+   773 ;;		_ledOn
+   774 ;; This function is called by:
+   775 ;;		_main
+   776 ;; This function uses a non-reentrant model
+   777 ;;
+   778                           
+   779                           
+   780                           ;psect for function _flashLed
+   781  02C4                     _flashLed:
+   782  02C4                     l948:	
+   783                           ;incstack = 0
+   784                           ; Regs used in _flashLed: [wreg+status,2+status,0+pclath+cstack]
+   785                           
+   786                           
+   787                           ;relayonpress.c: 175: ledOn();
+   788  02C4  22AF               	fcall	_ledOn
+   789  02C5                     l950:
+   790                           
+   791                           ;relayonpress.c: 176: delay_ms( delayInMs );
+   792  02C5  1283               	bcf	3,5	;RP0=0, select bank0
+   793  02C6  0824               	movf	flashLed@delayInMs+1,w
+   794  02C7  00A1               	movwf	delay_ms@milliseconds+1
+   795  02C8  0823               	movf	flashLed@delayInMs,w
+   796  02C9  00A0               	movwf	delay_ms@milliseconds
+   797  02CA  22D3               	fcall	_delay_ms
+   798  02CB                     l952:
+   799                           
+   800                           ;relayonpress.c: 177: ledOff();
+   801  02CB  229D               	fcall	_ledOff
+   802                           
+   803                           ;relayonpress.c: 178: delay_ms( delayInMs );
+   804  02CC  1283               	bcf	3,5	;RP0=0, select bank0
+   805  02CD  0824               	movf	flashLed@delayInMs+1,w
+   806  02CE  00A1               	movwf	delay_ms@milliseconds+1
+   807  02CF  0823               	movf	flashLed@delayInMs,w
+   808  02D0  00A0               	movwf	delay_ms@milliseconds
+   809  02D1  22D3               	fcall	_delay_ms
+   810  02D2                     l101:
+   811  02D2  0008               	return
+   812  02D3                     __end_of_flashLed:
+   813                           
+   814                           	psect	text2
+   815  02B5                     __ptext2:	
+   816 ;; *************** function _changePedalState *****************
+   817 ;; Defined at:
+   818 ;;		line 219 in file "relayonpress.c"
+   819 ;; Parameters:    Size  Location     Type
+   820 ;;  state           1    wreg     char 
+   821 ;; Auto vars:     Size  Location     Type
+   822 ;;  state           1    6[BANK0 ] char 
+   823 ;; Return value:  Size  Location     Type
+   824 ;;                  1    wreg      char 
+   825 ;; Registers used:
+   826 ;;		wreg, status,2, status,0, pclath, cstack
+   827 ;; Tracked objects:
+   828 ;;		On entry : 0/0
+   829 ;;		On exit  : 0/0
+   830 ;;		Unchanged: 0/0
+   831 ;; Data sizes:     COMMON   BANK0
+   832 ;;      Params:         0       0
+   833 ;;      Locals:         0       1
+   834 ;;      Temps:          0       0
+   835 ;;      Totals:         0       1
+   836 ;;Total ram usage:        1 bytes
+   837 ;; Hardware stack levels used:    1
+   838 ;; Hardware stack levels required when called:    2
+   839 ;; This function calls:
+   840 ;;		_pedalOff
+   841 ;;		_pedalOn
+   842 ;; This function is called by:
+   843 ;;		_main
+   844 ;; This function uses a non-reentrant model
+   845 ;;
+   846                           
+   847                           
+   848                           ;psect for function _changePedalState
+   849  02B5                     _changePedalState:
+   850                           
+   851                           ;incstack = 0
+   852                           ; Regs used in _changePedalState: [wreg+status,2+status,0+pclath+cstack]
+   853                           ;changePedalState@state stored from wreg
+   854  02B5  1283               	bcf	3,5	;RP0=0, select bank0
+   855  02B6  00A6               	movwf	changePedalState@state
+   856  02B7                     l954:
+   857                           
+   858                           ;relayonpress.c: 221: if ( state == 1 ) {
+   859  02B7  0326               	decf	changePedalState@state,w
+   860  02B8  1D03               	btfss	3,2
+   861  02B9  2ABB               	goto	u211
+   862  02BA  2ABC               	goto	u210
+   863  02BB                     u211:
+   864  02BB  2AC0               	goto	l964
+   865  02BC                     u210:
+   866  02BC                     l956:
+   867                           
+   868                           ;relayonpress.c: 222: pedalOn( 15 );
+   869  02BC  300F               	movlw	15
+   870  02BD  230F               	fcall	_pedalOn
+   871  02BE                     l958:
+   872                           
+   873                           ;relayonpress.c: 223: return 1;
+   874  02BE  3001               	movlw	1
+   875  02BF  2AC3               	goto	l111
+   876  02C0                     l964:
+   877                           
+   878                           ;relayonpress.c: 225: pedalOff( 15 );
+   879  02C0  300F               	movlw	15
+   880  02C1  22EA               	fcall	_pedalOff
+   881  02C2                     l966:
+   882                           
+   883                           ;relayonpress.c: 226: return 0;
+   884  02C2  3000               	movlw	0
+   885  02C3                     l111:
+   886  02C3  0008               	return
+   887  02C4                     __end_of_changePedalState:
+   888                           
+   889                           	psect	text3
+   890  030F                     __ptext3:	
+   891 ;; *************** function _pedalOn *****************
+   892 ;; Defined at:
+   893 ;;		line 181 in file "relayonpress.c"
+   894 ;; Parameters:    Size  Location     Type
+   895 ;;  delayInMs       1    wreg     unsigned char 
+   896 ;; Auto vars:     Size  Location     Type
+   897 ;;  delayInMs       1    5[BANK0 ] unsigned char 
+   898 ;; Return value:  Size  Location     Type
+   899 ;;                  1    wreg      unsigned char 
+   900 ;; Registers used:
+   901 ;;		wreg, status,2, status,0, pclath, cstack
+   902 ;; Tracked objects:
+   903 ;;		On entry : 0/0
+   904 ;;		On exit  : 0/0
+   905 ;;		Unchanged: 0/0
+   906 ;; Data sizes:     COMMON   BANK0
+   907 ;;      Params:         0       0
+   908 ;;      Locals:         0       1
+   909 ;;      Temps:          0       2
+   910 ;;      Totals:         0       3
+   911 ;;Total ram usage:        3 bytes
+   912 ;; Hardware stack levels used:    1
+   913 ;; Hardware stack levels required when called:    1
+   914 ;; This function calls:
+   915 ;;		_delay_ms
+   916 ;;		_ledOn
+   917 ;;		_negativeRelayOff
+   918 ;;		_negativeRelayOn
+   919 ;;		_photoFetOff
+   920 ;;		_photoFetOn
+   921 ;;		_positiveRelayOff
+   922 ;; This function is called by:
+   923 ;;		_changePedalState
+   924 ;; This function uses a non-reentrant model
+   925 ;;
+   926                           
+   927                           
+   928                           ;psect for function _pedalOn
+   929  030F                     _pedalOn:
+   930                           
+   931                           ;incstack = 0
+   932                           ; Regs used in _pedalOn: [wreg+status,2+status,0+pclath+cstack]
+   933                           ;pedalOn@delayInMs stored from wreg
+   934  030F  1283               	bcf	3,5	;RP0=0, select bank0
+   935  0310  00A5               	movwf	pedalOn@delayInMs
+   936  0311                     l912:
+   937                           
+   938                           ;relayonpress.c: 183: photoFetOn();
+   939  0311  22A6               	fcall	_photoFetOn
+   940  0312                     l914:
+   941                           
+   942                           ;relayonpress.c: 184: delay_ms( delayInMs );
+   943  0312  1283               	bcf	3,5	;RP0=0, select bank0
+   944  0313  0825               	movf	pedalOn@delayInMs,w
+   945  0314  00A3               	movwf	??_pedalOn
+   946  0315  01A4               	clrf	??_pedalOn+1
+   947  0316  0823               	movf	??_pedalOn,w
+   948  0317  00A0               	movwf	delay_ms@milliseconds
+   949  0318  0824               	movf	??_pedalOn+1,w
+   950  0319  00A1               	movwf	delay_ms@milliseconds+1
+   951  031A  22D3               	fcall	_delay_ms
+   952  031B                     l916:
+   953                           
+   954                           ;relayonpress.c: 185: ledOn();
+   955  031B  22AF               	fcall	_ledOn
+   956  031C                     l918:
+   957                           
+   958                           ;relayonpress.c: 188: negativeRelayOn();
+   959  031C  22B2               	fcall	_negativeRelayOn
+   960  031D                     l920:
+   961                           
+   962                           ;relayonpress.c: 189: positiveRelayOff();
+   963  031D  22A9               	fcall	_positiveRelayOff
+   964  031E                     l922:
+   965                           
+   966                           ;relayonpress.c: 190: _delay((unsigned long)((5)*(4000000/4000.0)));
+   967  031E  3007               	movlw	7
+   968  031F  1283               	bcf	3,5	;RP0=0, select bank0
+   969  0320  00A4               	movwf	??_pedalOn+1
+   970  0321  307D               	movlw	125
+   971  0322  00A3               	movwf	??_pedalOn
+   972  0323                     u427:
+   973  0323  0BA3               	decfsz	??_pedalOn,f
+   974  0324  2B23               	goto	u427
+   975  0325  0BA4               	decfsz	??_pedalOn+1,f
+   976  0326  2B23               	goto	u427
+   977                           
+   978                           ;relayonpress.c: 191: negativeRelayOff();
+   979  0327  22A0               	fcall	_negativeRelayOff
+   980                           
+   981                           ;relayonpress.c: 192: positiveRelayOff();
+   982  0328  22A9               	fcall	_positiveRelayOff
+   983  0329                     l924:
+   984                           
+   985                           ;relayonpress.c: 194: delay_ms( delayInMs );
+   986  0329  1283               	bcf	3,5	;RP0=0, select bank0
+   987  032A  0825               	movf	pedalOn@delayInMs,w
+   988  032B  00A3               	movwf	??_pedalOn
+   989  032C  01A4               	clrf	??_pedalOn+1
+   990  032D  0823               	movf	??_pedalOn,w
+   991  032E  00A0               	movwf	delay_ms@milliseconds
+   992  032F  0824               	movf	??_pedalOn+1,w
+   993  0330  00A1               	movwf	delay_ms@milliseconds+1
+   994  0331  22D3               	fcall	_delay_ms
+   995  0332                     l926:
+   996                           
+   997                           ;relayonpress.c: 195: photoFetOff();
+   998  0332  22A3               	fcall	_photoFetOff
+   999  0333                     l104:
+  1000  0333  0008               	return
+  1001  0334                     __end_of_pedalOn:
+  1002                           
+  1003                           	psect	text4
+  1004  02B2                     __ptext4:	
+  1005 ;; *************** function _negativeRelayOn *****************
+  1006 ;; Defined at:
+  1007 ;;		line 157 in file "relayonpress.c"
+  1008 ;; Parameters:    Size  Location     Type
+  1009 ;;		None
+  1010 ;; Auto vars:     Size  Location     Type
+  1011 ;;		None
+  1012 ;; Return value:  Size  Location     Type
+  1013 ;;                  1    wreg      void 
+  1014 ;; Registers used:
+  1015 ;;		None
+  1016 ;; Tracked objects:
+  1017 ;;		On entry : 0/0
+  1018 ;;		On exit  : 0/0
+  1019 ;;		Unchanged: 0/0
+  1020 ;; Data sizes:     COMMON   BANK0
+  1021 ;;      Params:         0       0
+  1022 ;;      Locals:         0       0
+  1023 ;;      Temps:          0       0
+  1024 ;;      Totals:         0       0
+  1025 ;;Total ram usage:        0 bytes
+  1026 ;; Hardware stack levels used:    1
+  1027 ;; This function calls:
+  1028 ;;		Nothing
+  1029 ;; This function is called by:
+  1030 ;;		_pedalOn
+  1031 ;; This function uses a non-reentrant model
+  1032 ;;
+  1033                           
+  1034                           
+  1035                           ;psect for function _negativeRelayOn
+  1036  02B2                     _negativeRelayOn:
+  1037  02B2                     l904:	
+  1038                           ;incstack = 0
+  1039                           ; Regs used in _negativeRelayOn: []
+  1040                           
+  1041                           
+  1042                           ;relayonpress.c: 158: GP2 = 1;
+  1043  02B2  1283               	bcf	3,5	;RP0=0, select bank0
+  1044  02B3  1505               	bsf	5,2	;volatile
+  1045  02B4                     l89:
+  1046  02B4  0008               	return
+  1047  02B5                     __end_of_negativeRelayOn:
+  1048                           
+  1049                           	psect	text5
+  1050  02AF                     __ptext5:	
+  1051 ;; *************** function _ledOn *****************
+  1052 ;; Defined at:
+  1053 ;;		line 149 in file "relayonpress.c"
+  1054 ;; Parameters:    Size  Location     Type
+  1055 ;;		None
+  1056 ;; Auto vars:     Size  Location     Type
+  1057 ;;		None
+  1058 ;; Return value:  Size  Location     Type
+  1059 ;;                  1    wreg      void 
+  1060 ;; Registers used:
+  1061 ;;		None
+  1062 ;; Tracked objects:
+  1063 ;;		On entry : 0/0
+  1064 ;;		On exit  : 0/0
+  1065 ;;		Unchanged: 0/0
+  1066 ;; Data sizes:     COMMON   BANK0
+  1067 ;;      Params:         0       0
+  1068 ;;      Locals:         0       0
+  1069 ;;      Temps:          0       0
+  1070 ;;      Totals:         0       0
+  1071 ;;Total ram usage:        0 bytes
+  1072 ;; Hardware stack levels used:    1
+  1073 ;; This function calls:
+  1074 ;;		Nothing
+  1075 ;; This function is called by:
+  1076 ;;		_flashLed
+  1077 ;;		_pedalOn
+  1078 ;; This function uses a non-reentrant model
+  1079 ;;
+  1080                           
+  1081                           
+  1082                           ;psect for function _ledOn
+  1083  02AF                     _ledOn:
+  1084  02AF                     l900:	
+  1085                           ;incstack = 0
+  1086                           ; Regs used in _ledOn: []
+  1087                           
+  1088                           
+  1089                           ;relayonpress.c: 150: GP0 = 1;
+  1090  02AF  1283               	bcf	3,5	;RP0=0, select bank0
+  1091  02B0  1405               	bsf	5,0	;volatile
+  1092  02B1                     l83:
+  1093  02B1  0008               	return
+  1094  02B2                     __end_of_ledOn:
+  1095                           
+  1096                           	psect	text6
+  1097  02EA                     __ptext6:	
+  1098 ;; *************** function _pedalOff *****************
+  1099 ;; Defined at:
+  1100 ;;		line 200 in file "relayonpress.c"
+  1101 ;; Parameters:    Size  Location     Type
+  1102 ;;  delayInMs       1    wreg     unsigned char 
+  1103 ;; Auto vars:     Size  Location     Type
+  1104 ;;  delayInMs       1    5[BANK0 ] unsigned char 
+  1105 ;; Return value:  Size  Location     Type
+  1106 ;;                  1    wreg      unsigned char 
+  1107 ;; Registers used:
+  1108 ;;		wreg, status,2, status,0, pclath, cstack
+  1109 ;; Tracked objects:
+  1110 ;;		On entry : 0/0
+  1111 ;;		On exit  : 0/0
+  1112 ;;		Unchanged: 0/0
+  1113 ;; Data sizes:     COMMON   BANK0
+  1114 ;;      Params:         0       0
+  1115 ;;      Locals:         0       1
+  1116 ;;      Temps:          0       2
+  1117 ;;      Totals:         0       3
+  1118 ;;Total ram usage:        3 bytes
+  1119 ;; Hardware stack levels used:    1
+  1120 ;; Hardware stack levels required when called:    1
+  1121 ;; This function calls:
+  1122 ;;		_delay_ms
+  1123 ;;		_ledOff
+  1124 ;;		_negativeRelayOff
+  1125 ;;		_photoFetOff
+  1126 ;;		_photoFetOn
+  1127 ;;		_positiveRelayOff
+  1128 ;;		_positiveRelayOn
+  1129 ;; This function is called by:
+  1130 ;;		_changePedalState
+  1131 ;; This function uses a non-reentrant model
+  1132 ;;
+  1133                           
+  1134                           
+  1135                           ;psect for function _pedalOff
+  1136  02EA                     _pedalOff:
+  1137                           
+  1138                           ;incstack = 0
+  1139                           ; Regs used in _pedalOff: [wreg+status,2+status,0+pclath+cstack]
+  1140                           ;pedalOff@delayInMs stored from wreg
+  1141  02EA  1283               	bcf	3,5	;RP0=0, select bank0
+  1142  02EB  00A5               	movwf	pedalOff@delayInMs
+  1143  02EC                     l930:
+  1144                           
+  1145                           ;relayonpress.c: 202: photoFetOn();
+  1146  02EC  22A6               	fcall	_photoFetOn
+  1147  02ED                     l932:
+  1148                           
+  1149                           ;relayonpress.c: 203: delay_ms( delayInMs );
+  1150  02ED  1283               	bcf	3,5	;RP0=0, select bank0
+  1151  02EE  0825               	movf	pedalOff@delayInMs,w
+  1152  02EF  00A3               	movwf	??_pedalOff
+  1153  02F0  01A4               	clrf	??_pedalOff+1
+  1154  02F1  0823               	movf	??_pedalOff,w
+  1155  02F2  00A0               	movwf	delay_ms@milliseconds
+  1156  02F3  0824               	movf	??_pedalOff+1,w
+  1157  02F4  00A1               	movwf	delay_ms@milliseconds+1
+  1158  02F5  22D3               	fcall	_delay_ms
+  1159  02F6                     l934:
+  1160                           
+  1161                           ;relayonpress.c: 204: ledOff();
+  1162  02F6  229D               	fcall	_ledOff
+  1163  02F7                     l936:
+  1164                           
+  1165                           ;relayonpress.c: 207: negativeRelayOff();
+  1166  02F7  22A0               	fcall	_negativeRelayOff
+  1167  02F8                     l938:
+  1168                           
+  1169                           ;relayonpress.c: 208: positiveRelayOn();
+  1170  02F8  22AC               	fcall	_positiveRelayOn
+  1171  02F9                     l940:
+  1172                           
+  1173                           ;relayonpress.c: 209: _delay((unsigned long)((5)*(4000000/4000.0)));
+  1174  02F9  3007               	movlw	7
+  1175  02FA  1283               	bcf	3,5	;RP0=0, select bank0
+  1176  02FB  00A4               	movwf	??_pedalOff+1
+  1177  02FC  307D               	movlw	125
+  1178  02FD  00A3               	movwf	??_pedalOff
+  1179  02FE                     u437:
+  1180  02FE  0BA3               	decfsz	??_pedalOff,f
+  1181  02FF  2AFE               	goto	u437
+  1182  0300  0BA4               	decfsz	??_pedalOff+1,f
+  1183  0301  2AFE               	goto	u437
+  1184                           
+  1185                           ;relayonpress.c: 210: negativeRelayOff();
+  1186  0302  22A0               	fcall	_negativeRelayOff
+  1187                           
+  1188                           ;relayonpress.c: 211: positiveRelayOff();
+  1189  0303  22A9               	fcall	_positiveRelayOff
+  1190  0304                     l942:
+  1191                           
+  1192                           ;relayonpress.c: 213: delay_ms( delayInMs );
+  1193  0304  1283               	bcf	3,5	;RP0=0, select bank0
+  1194  0305  0825               	movf	pedalOff@delayInMs,w
+  1195  0306  00A3               	movwf	??_pedalOff
+  1196  0307  01A4               	clrf	??_pedalOff+1
+  1197  0308  0823               	movf	??_pedalOff,w
+  1198  0309  00A0               	movwf	delay_ms@milliseconds
+  1199  030A  0824               	movf	??_pedalOff+1,w
+  1200  030B  00A1               	movwf	delay_ms@milliseconds+1
+  1201  030C  22D3               	fcall	_delay_ms
+  1202  030D                     l944:
+  1203                           
+  1204                           ;relayonpress.c: 214: photoFetOff();
+  1205  030D  22A3               	fcall	_photoFetOff
+  1206  030E                     l107:
+  1207  030E  0008               	return
+  1208  030F                     __end_of_pedalOff:
+  1209                           
+  1210                           	psect	text7
+  1211  02AC                     __ptext7:	
+  1212 ;; *************** function _positiveRelayOn *****************
+  1213 ;; Defined at:
+  1214 ;;		line 165 in file "relayonpress.c"
+  1215 ;; Parameters:    Size  Location     Type
+  1216 ;;		None
+  1217 ;; Auto vars:     Size  Location     Type
+  1218 ;;		None
+  1219 ;; Return value:  Size  Location     Type
+  1220 ;;                  1    wreg      void 
+  1221 ;; Registers used:
+  1222 ;;		None
+  1223 ;; Tracked objects:
+  1224 ;;		On entry : 0/0
+  1225 ;;		On exit  : 0/0
+  1226 ;;		Unchanged: 0/0
+  1227 ;; Data sizes:     COMMON   BANK0
+  1228 ;;      Params:         0       0
+  1229 ;;      Locals:         0       0
+  1230 ;;      Temps:          0       0
+  1231 ;;      Totals:         0       0
+  1232 ;;Total ram usage:        0 bytes
+  1233 ;; Hardware stack levels used:    1
+  1234 ;; This function calls:
+  1235 ;;		Nothing
+  1236 ;; This function is called by:
+  1237 ;;		_pedalOff
+  1238 ;; This function uses a non-reentrant model
+  1239 ;;
+  1240                           
+  1241                           
+  1242                           ;psect for function _positiveRelayOn
+  1243  02AC                     _positiveRelayOn:
+  1244  02AC                     l908:	
+  1245                           ;incstack = 0
+  1246                           ; Regs used in _positiveRelayOn: []
+  1247                           
+  1248                           
+  1249                           ;relayonpress.c: 166: GP4 = 1;
+  1250  02AC  1283               	bcf	3,5	;RP0=0, select bank0
+  1251  02AD  1605               	bsf	5,4	;volatile
+  1252  02AE                     l95:
+  1253  02AE  0008               	return
+  1254  02AF                     __end_of_positiveRelayOn:
+  1255                           
+  1256                           	psect	text8
+  1257  02A9                     __ptext8:	
+  1258 ;; *************** function _positiveRelayOff *****************
+  1259 ;; Defined at:
+  1260 ;;		line 169 in file "relayonpress.c"
+  1261 ;; Parameters:    Size  Location     Type
+  1262 ;;		None
+  1263 ;; Auto vars:     Size  Location     Type
+  1264 ;;		None
+  1265 ;; Return value:  Size  Location     Type
+  1266 ;;                  1    wreg      void 
+  1267 ;; Registers used:
+  1268 ;;		None
+  1269 ;; Tracked objects:
+  1270 ;;		On entry : 0/0
+  1271 ;;		On exit  : 0/0
+  1272 ;;		Unchanged: 0/0
+  1273 ;; Data sizes:     COMMON   BANK0
+  1274 ;;      Params:         0       0
+  1275 ;;      Locals:         0       0
+  1276 ;;      Temps:          0       0
+  1277 ;;      Totals:         0       0
+  1278 ;;Total ram usage:        0 bytes
+  1279 ;; Hardware stack levels used:    1
+  1280 ;; This function calls:
+  1281 ;;		Nothing
+  1282 ;; This function is called by:
+  1283 ;;		_pedalOn
+  1284 ;;		_pedalOff
+  1285 ;; This function uses a non-reentrant model
+  1286 ;;
+  1287                           
+  1288                           
+  1289                           ;psect for function _positiveRelayOff
+  1290  02A9                     _positiveRelayOff:
+  1291  02A9                     l910:	
+  1292                           ;incstack = 0
+  1293                           ; Regs used in _positiveRelayOff: []
+  1294                           
+  1295                           
+  1296                           ;relayonpress.c: 170: GP4 = 0;
+  1297  02A9  1283               	bcf	3,5	;RP0=0, select bank0
+  1298  02AA  1205               	bcf	5,4	;volatile
+  1299  02AB                     l98:
+  1300  02AB  0008               	return
+  1301  02AC                     __end_of_positiveRelayOff:
+  1302                           
+  1303                           	psect	text9
+  1304  02A6                     __ptext9:	
+  1305 ;; *************** function _photoFetOn *****************
+  1306 ;; Defined at:
+  1307 ;;		line 141 in file "relayonpress.c"
+  1308 ;; Parameters:    Size  Location     Type
+  1309 ;;		None
+  1310 ;; Auto vars:     Size  Location     Type
+  1311 ;;		None
+  1312 ;; Return value:  Size  Location     Type
+  1313 ;;                  1    wreg      void 
+  1314 ;; Registers used:
+  1315 ;;		None
+  1316 ;; Tracked objects:
+  1317 ;;		On entry : 0/0
+  1318 ;;		On exit  : 0/0
+  1319 ;;		Unchanged: 0/0
+  1320 ;; Data sizes:     COMMON   BANK0
+  1321 ;;      Params:         0       0
+  1322 ;;      Locals:         0       0
+  1323 ;;      Temps:          0       0
+  1324 ;;      Totals:         0       0
+  1325 ;;Total ram usage:        0 bytes
+  1326 ;; Hardware stack levels used:    1
+  1327 ;; This function calls:
+  1328 ;;		Nothing
+  1329 ;; This function is called by:
+  1330 ;;		_pedalOn
+  1331 ;;		_pedalOff
+  1332 ;; This function uses a non-reentrant model
+  1333 ;;
+  1334                           
+  1335                           
+  1336                           ;psect for function _photoFetOn
+  1337  02A6                     _photoFetOn:
+  1338  02A6                     l896:	
+  1339                           ;incstack = 0
+  1340                           ; Regs used in _photoFetOn: []
+  1341                           
+  1342                           
+  1343                           ;relayonpress.c: 142: GP5 = 1;
+  1344  02A6  1283               	bcf	3,5	;RP0=0, select bank0
+  1345  02A7  1685               	bsf	5,5	;volatile
+  1346  02A8                     l77:
+  1347  02A8  0008               	return
+  1348  02A9                     __end_of_photoFetOn:
+  1349                           
+  1350                           	psect	text10
+  1351  02A3                     __ptext10:	
+  1352 ;; *************** function _photoFetOff *****************
+  1353 ;; Defined at:
+  1354 ;;		line 145 in file "relayonpress.c"
+  1355 ;; Parameters:    Size  Location     Type
+  1356 ;;		None
+  1357 ;; Auto vars:     Size  Location     Type
+  1358 ;;		None
+  1359 ;; Return value:  Size  Location     Type
+  1360 ;;                  1    wreg      void 
+  1361 ;; Registers used:
+  1362 ;;		None
+  1363 ;; Tracked objects:
+  1364 ;;		On entry : 0/0
+  1365 ;;		On exit  : 0/0
+  1366 ;;		Unchanged: 0/0
+  1367 ;; Data sizes:     COMMON   BANK0
+  1368 ;;      Params:         0       0
+  1369 ;;      Locals:         0       0
+  1370 ;;      Temps:          0       0
+  1371 ;;      Totals:         0       0
+  1372 ;;Total ram usage:        0 bytes
+  1373 ;; Hardware stack levels used:    1
+  1374 ;; This function calls:
+  1375 ;;		Nothing
+  1376 ;; This function is called by:
+  1377 ;;		_pedalOn
+  1378 ;;		_pedalOff
+  1379 ;; This function uses a non-reentrant model
+  1380 ;;
+  1381                           
+  1382                           
+  1383                           ;psect for function _photoFetOff
+  1384  02A3                     _photoFetOff:
+  1385  02A3                     l898:	
+  1386                           ;incstack = 0
+  1387                           ; Regs used in _photoFetOff: []
+  1388                           
+  1389                           
+  1390                           ;relayonpress.c: 146: GP5 = 0;
+  1391  02A3  1283               	bcf	3,5	;RP0=0, select bank0
+  1392  02A4  1285               	bcf	5,5	;volatile
+  1393  02A5                     l80:
+  1394  02A5  0008               	return
+  1395  02A6                     __end_of_photoFetOff:
+  1396                           
+  1397                           	psect	text11
+  1398  02A0                     __ptext11:	
+  1399 ;; *************** function _negativeRelayOff *****************
+  1400 ;; Defined at:
+  1401 ;;		line 161 in file "relayonpress.c"
+  1402 ;; Parameters:    Size  Location     Type
+  1403 ;;		None
+  1404 ;; Auto vars:     Size  Location     Type
+  1405 ;;		None
+  1406 ;; Return value:  Size  Location     Type
+  1407 ;;                  1    wreg      void 
+  1408 ;; Registers used:
+  1409 ;;		None
+  1410 ;; Tracked objects:
+  1411 ;;		On entry : 0/0
+  1412 ;;		On exit  : 0/0
+  1413 ;;		Unchanged: 0/0
+  1414 ;; Data sizes:     COMMON   BANK0
+  1415 ;;      Params:         0       0
+  1416 ;;      Locals:         0       0
+  1417 ;;      Temps:          0       0
+  1418 ;;      Totals:         0       0
+  1419 ;;Total ram usage:        0 bytes
+  1420 ;; Hardware stack levels used:    1
+  1421 ;; This function calls:
+  1422 ;;		Nothing
+  1423 ;; This function is called by:
+  1424 ;;		_pedalOn
+  1425 ;;		_pedalOff
+  1426 ;; This function uses a non-reentrant model
+  1427 ;;
+  1428                           
+  1429                           
+  1430                           ;psect for function _negativeRelayOff
+  1431  02A0                     _negativeRelayOff:
+  1432  02A0                     l906:	
+  1433                           ;incstack = 0
+  1434                           ; Regs used in _negativeRelayOff: []
+  1435                           
+  1436                           
+  1437                           ;relayonpress.c: 162: GP2 = 0;
+  1438  02A0  1283               	bcf	3,5	;RP0=0, select bank0
+  1439  02A1  1105               	bcf	5,2	;volatile
+  1440  02A2                     l92:
+  1441  02A2  0008               	return
+  1442  02A3                     __end_of_negativeRelayOff:
+  1443                           
+  1444                           	psect	text12
+  1445  029D                     __ptext12:	
+  1446 ;; *************** function _ledOff *****************
+  1447 ;; Defined at:
+  1448 ;;		line 153 in file "relayonpress.c"
+  1449 ;; Parameters:    Size  Location     Type
+  1450 ;;		None
+  1451 ;; Auto vars:     Size  Location     Type
+  1452 ;;		None
+  1453 ;; Return value:  Size  Location     Type
+  1454 ;;                  1    wreg      void 
+  1455 ;; Registers used:
+  1456 ;;		None
+  1457 ;; Tracked objects:
+  1458 ;;		On entry : 0/0
+  1459 ;;		On exit  : 0/0
+  1460 ;;		Unchanged: 0/0
+  1461 ;; Data sizes:     COMMON   BANK0
+  1462 ;;      Params:         0       0
+  1463 ;;      Locals:         0       0
+  1464 ;;      Temps:          0       0
+  1465 ;;      Totals:         0       0
+  1466 ;;Total ram usage:        0 bytes
+  1467 ;; Hardware stack levels used:    1
+  1468 ;; This function calls:
+  1469 ;;		Nothing
+  1470 ;; This function is called by:
+  1471 ;;		_flashLed
+  1472 ;;		_pedalOff
+  1473 ;; This function uses a non-reentrant model
+  1474 ;;
+  1475                           
+  1476                           
+  1477                           ;psect for function _ledOff
+  1478  029D                     _ledOff:
+  1479  029D                     l902:	
+  1480                           ;incstack = 0
+  1481                           ; Regs used in _ledOff: []
+  1482                           
+  1483                           
+  1484                           ;relayonpress.c: 154: GP0 = 0;
+  1485  029D  1283               	bcf	3,5	;RP0=0, select bank0
+  1486  029E  1005               	bcf	5,0	;volatile
+  1487  029F                     l86:
+  1488  029F  0008               	return
+  1489  02A0                     __end_of_ledOff:
+  1490                           
+  1491                           	psect	text13
+  1492  02D3                     __ptext13:	
+  1493 ;; *************** function _delay_ms *****************
+  1494 ;; Defined at:
+  1495 ;;		line 134 in file "relayonpress.c"
+  1496 ;; Parameters:    Size  Location     Type
+  1497 ;;  milliseconds    2    0[BANK0 ] unsigned int 
+  1498 ;; Auto vars:     Size  Location     Type
+  1499 ;;		None
+  1500 ;; Return value:  Size  Location     Type
+  1501 ;;                  1    wreg      void 
+  1502 ;; Registers used:
+  1503 ;;		wreg, status,2, status,0
+  1504 ;; Tracked objects:
+  1505 ;;		On entry : 0/0
+  1506 ;;		On exit  : 0/0
+  1507 ;;		Unchanged: 0/0
+  1508 ;; Data sizes:     COMMON   BANK0
+  1509 ;;      Params:         0       2
+  1510 ;;      Locals:         0       0
+  1511 ;;      Temps:          0       1
+  1512 ;;      Totals:         0       3
+  1513 ;;Total ram usage:        3 bytes
+  1514 ;; Hardware stack levels used:    1
+  1515 ;; This function calls:
+  1516 ;;		Nothing
+  1517 ;; This function is called by:
+  1518 ;;		_flashLed
+  1519 ;;		_pedalOn
+  1520 ;;		_pedalOff
+  1521 ;; This function uses a non-reentrant model
+  1522 ;;
+  1523                           
+  1524                           
+  1525                           ;psect for function _delay_ms
+  1526  02D3                     _delay_ms:
+  1527  02D3                     l890:	
+  1528                           ;incstack = 0
+  1529                           ; Regs used in _delay_ms: [wreg+status,2+status,0]
+  1530                           
+  1531                           
+  1532                           ;relayonpress.c: 135: while( milliseconds > 0 ) {
+  1533  02D3  2AE2               	goto	l894
+  1534  02D4                     l892:
+  1535                           
+  1536                           ;relayonpress.c: 136: _delay((unsigned long)((1)*(4000000/4000.0)));
+  1537  02D4  30C7               	movlw	199
+  1538  02D5  00A2               	movwf	??_delay_ms
+  1539  02D6                     u447:
+  1540  02D6  2AD7               	nop2
+  1541  02D7  0BA2               	decfsz	??_delay_ms,f
+  1542  02D8  2AD6               	goto	u447
+  1543  02D9  2ADA               	nop2
+  1544  02DA  2ADB               	nop2
+  1545                           
+  1546                           ;relayonpress.c: 137: milliseconds--;
+  1547  02DB  3001               	movlw	1
+  1548  02DC  1283               	bcf	3,5	;RP0=0, select bank0
+  1549  02DD  02A0               	subwf	delay_ms@milliseconds,f
+  1550  02DE  3000               	movlw	0
+  1551  02DF  1C03               	skipc
+  1552  02E0  03A1               	decf	delay_ms@milliseconds+1,f
+  1553  02E1  02A1               	subwf	delay_ms@milliseconds+1,f
+  1554  02E2                     l894:
+  1555  02E2  1283               	bcf	3,5	;RP0=0, select bank0
+  1556  02E3  0820               	movf	delay_ms@milliseconds,w
+  1557  02E4  0421               	iorwf	delay_ms@milliseconds+1,w
+  1558  02E5  1D03               	btfss	3,2
+  1559  02E6  2AE8               	goto	u201
+  1560  02E7  2AE9               	goto	u200
+  1561  02E8                     u201:
+  1562  02E8  2AD4               	goto	l892
+  1563  02E9                     u200:
+  1564  02E9                     l74:
+  1565  02E9  0008               	return
+  1566  02EA                     __end_of_delay_ms:
+  1567  005E                     btemp	set	94	;btemp
+  1568  005E                     wtemp0	set	94
+  1569                           
+  1570                           	psect	config
+  1571                           
+  1572                           ;Config register CONFIG @ 0x2007
+  1573                           ;	Oscillator Selection bits
+  1574                           ;	FOSC = INTRCIO, INTOSC oscillator: I/O function on GP4/OSC2/CLKOUT pin, I/O function o
+      +                          n GP5/OSC1/CLKIN
+  1575                           ;	Watchdog Timer Enable bit
+  1576                           ;	WDTE = OFF, WDT disabled
+  1577                           ;	Power-Up Timer Enable bit
+  1578                           ;	PWRTE = OFF, PWRT disabled
+  1579                           ;	GP3/MCLR pin function select
+  1580                           ;	MCLRE = OFF, GP3/MCLR pin function is digital I/O, MCLR internally tied to VDD
+  1581                           ;	Brown-out Detect Enable bit
+  1582                           ;	BOREN = OFF, BOD disabled
+  1583                           ;	Code Protection bit
+  1584                           ;	CP = OFF, Program Memory code protection is disabled
+  1585                           ;	Data Code Protection bit
+  1586                           ;	CPD = OFF, Data memory code protection is disabled
+  1587  2007                     	org	8199
+  1588  2007  3194               	dw	12692
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON            0      0       0
+    BANK0            62     16      16
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _main->_changePedalState
+    _flashLed->_delay_ms
+    _changePedalState->_pedalOff
+    _changePedalState->_pedalOn
+    _pedalOn->_delay_ms
+    _pedalOff->_delay_ms
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 9     9      0    2086
+                                              7 BANK0      9     9      0
+                   _changePedalState
+                           _flashLed
+ ---------------------------------------------------------------------------------
+ (1) _flashLed                                             2     0      2     751
+                                              3 BANK0      2     0      2
+                           _delay_ms
+                             _ledOff
+                              _ledOn
+ ---------------------------------------------------------------------------------
+ (1) _changePedalState                                     1     1      0    1068
+                                              6 BANK0      1     1      0
+                           _pedalOff
+                            _pedalOn
+ ---------------------------------------------------------------------------------
+ (2) _pedalOn                                              3     3      0     523
+                                              3 BANK0      3     3      0
+                           _delay_ms
+                              _ledOn
+                   _negativeRelayOff
+                    _negativeRelayOn
+                        _photoFetOff
+                         _photoFetOn
+                   _positiveRelayOff
+ ---------------------------------------------------------------------------------
+ (3) _negativeRelayOn                                      0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _ledOn                                                0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _pedalOff                                             3     3      0     523
+                                              3 BANK0      3     3      0
+                           _delay_ms
+                             _ledOff
+                   _negativeRelayOff
+                        _photoFetOff
+                         _photoFetOn
+                   _positiveRelayOff
+                    _positiveRelayOn
+ ---------------------------------------------------------------------------------
+ (3) _positiveRelayOn                                      0     0      0       0
+ ---------------------------------------------------------------------------------
+ (3) _positiveRelayOff                                     0     0      0       0
+ ---------------------------------------------------------------------------------
+ (3) _photoFetOn                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (3) _photoFetOff                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (3) _negativeRelayOff                                     0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _ledOff                                               0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _delay_ms                                             3     1      2     479
+                                              0 BANK0      3     1      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _changePedalState
+     _pedalOff
+       _delay_ms
+       _ledOff
+       _negativeRelayOff
+       _photoFetOff
+       _photoFetOn
+       _positiveRelayOff
+       _positiveRelayOn
+     _pedalOn
+       _delay_ms
+       _ledOn
+       _negativeRelayOff
+       _negativeRelayOn
+       _photoFetOff
+       _photoFetOn
+       _positiveRelayOff
+   _flashLed
+     _delay_ms
+     _ledOff
+     _ledOn
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            0      0       0       0        0.0%
+EEDATA              80      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMON               0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+BITBANK0            3E      0       0       3        0.0%
+BANK0               3E     10      10       4       25.8%
+ABS                  0      0       0       5        0.0%
+DATA                 0      0       0       6        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.20 build 20200408173844 
+Symbol Table                                                                                   Thu Jul 16 13:13:38 2020
+
+         main@switchStatus 002F                         l44 034B                         l80 02A5  
+                       l48 03A2                         l74 02E9                         l83 02B1  
+                       l92 02A2                         l77 02A8                         l86 029F  
+                       l95 02AE                         l89 02B4                         l98 02AB  
+         _changePedalState 02B5                        l101 02D2                        l111 02C3  
+                      l104 0333                        l107 030E                        l900 02AF  
+                      l902 029D                        l910 02A9                        l904 02B2  
+                      l920 031D                        l912 0311                        l906 02A0  
+                      l930 02EC                        l922 031E                        l914 0312  
+                      l908 02AC                        l940 02F9                        l932 02ED  
+                      l924 0329                        l916 031B                        l942 0304  
+                      l934 02F6                        l926 0332                        l918 031C  
+                      l950 02C5                        l944 030D                        l936 02F7  
+                      l952 02CB                        l890 02D3                        l938 02F8  
+                      l954 02B7                        l970 0334                        l892 02D4  
+                      l956 02BC                        l964 02C0                        l948 02C4  
+                      l980 033D                        l972 0336                        _GP0 0028  
+                      _GP1 0029                        l894 02E2                        l966 02C2  
+                      l958 02BE                        l990 0343                        l982 033E  
+                      l974 0339                        _GP2 002A                        _GP3 002B  
+                      l896 02A6                        l992 0347                        l984 033F  
+                      l976 033A                        _GP4 002C                        _GP5 002D  
+                      l898 02A3                        l994 034A                        l986 0340  
+                      l978 033C                        l996 034D                        l988 0341  
+                      l998 0352                        u200 02E9                        u201 02E8  
+                      u210 02BC                        u211 02BB                        u300 03B8  
+                      u220 0347                        u301 03B7                        u221 0346  
+                      u310 03C7                        u230 035E                        u311 03C6  
+                      u231 035D                        u320 03CD                        u240 0374  
+                      u321 03CC                        u241 0373                        u330 03D2  
+                      u250 0386                        u331 03D1                        u251 0385  
+                      u340 03D8                        u260 0395                        u341 03D7  
+                      u261 0394                        u350 03DF                        u270 039B  
+                      u351 03DE                        u407 03AE                        u271 039A  
+                      u360 03E4                        u280 03A0                        u417 03F4  
+                      u361 03E3                        u281 039F                        u370 03EA  
+                      u290 03A6                        u427 0323                        u371 03E8  
+                      u291 03A5                        u380 03EB                        u437 02FE  
+                      u447 02D6                        u397 037C                       l1000 0358  
+                     l1010 0374                       l1002 035E                       l1020 038B  
+                     l1012 0378                       l1004 0363                       l1030 039B  
+                     l1022 038C                       l1014 037A                       l1006 036A  
+                     l1040 03AC                       l1032 039B                       l1024 038E  
+                     l1016 0381                       l1008 0370                       l1050 03C0  
+                     l1042 03B3                       l1034 03A0                       l1018 0386  
+                     l1026 0390                       l1060 03D2                       l1044 03B8  
+                     l1052 03C2                       l1036 03A6                       l1028 0395  
+                     l1070 03E4                       l1062 03D3                       l1054 03C7  
+                     l1046 03BD                       l1038 03AA                       l1072 03F0  
+                     l1064 03D8                       l1056 03CD                       l1048 03BE  
+                     l1074 03F9                       l1058 03CD                       l1066 03DA  
+                     l1068 03DF                       _GPIO 0005    __end_of_positiveRelayOn 02AF  
+              main@upCount 002C                       _main 0334                       btemp 005E  
+                     start 0000    __end_of_negativeRelayOn 02B5                      ?_main 0020  
+        pedalOff@delayInMs 0025                      _CMCON 0019                      _ANSEL 009F  
+ __end_of_positiveRelayOff 02AC                      _ledOn 02AF            __end_of_pedalOn 0334  
+                    main@i 002E                      status 0003                      wtemp0 005E  
+ __end_of_negativeRelayOff 02A3            __initialization 03FD               __end_of_main 03FD  
+                   ??_main 0027                     ?_ledOn 0020                     _ADCON0 001F  
+            main@downCount 002B           ?_positiveRelayOn 0020               ?_photoFetOff 0020  
+         __end_of_delay_ms 02EA       delay_ms@milliseconds 0020           __end_of_flashLed 02D3  
+         ?_negativeRelayOn 0020                     _ledOff 029D           __end_of_pedalOff 030F  
+                ??_pedalOn 0023    __end_of__initialization 03FD   __end_of_changePedalState 02C4  
+           __pcstackCOMMON 0000              __end_of_ledOn 02B2                    ??_ledOn 0000  
+               __pmaintext 0334                    ?_ledOff 0020          ?_positiveRelayOff 0020  
+                ?_delay_ms 0020         ??_positiveRelayOff 0000                  ?_flashLed 0023  
+                  _TRISIO0 0428                    _TRISIO1 0429                    _TRISIO2 042A  
+                  _TRISIO3 042B                    _TRISIO4 042C                    _TRISIO5 042D  
+                ?_pedalOff 0020       __size_of_photoFetOff 0003          ?_negativeRelayOff 0020  
+       ??_negativeRelayOff 0000            __size_of_ledOff 0003                    __ptext1 02C4  
+                  __ptext2 02B5                    __ptext3 030F                    __ptext4 02B2  
+                  __ptext5 02AF                    __ptext6 02EA                    __ptext7 02AC  
+                  __ptext8 02A9                    __ptext9 02A6                    _pedalOn 030F  
+               ??_delay_ms 0022                 ??_flashLed 0000          flashLed@delayInMs 0023  
+     end_of_initialization 03FD                 ??_pedalOff 0023                 _photoFetOn 02A6  
+    changePedalState@state 0026    main@statusChangeAllowed 002D           pedalOn@delayInMs 0025  
+        ?_changePedalState 0020         ??_changePedalState 0000   __size_of_positiveRelayOn 0003  
+           __end_of_ledOff 02A0   __size_of_negativeRelayOn 0003        start_initialization 03FD  
+              ?_photoFetOn 0020                   ??_ledOff 0000                  ___latbits 0000  
+            __pcstackBANK0 0020          __size_of_delay_ms 0017          __size_of_flashLed 000F  
+__size_of_positiveRelayOff 0003          __size_of_pedalOff 0025          ??_positiveRelayOn 0000  
+                 ?_pedalOn 0020        __size_of_photoFetOn 0003  __size_of_negativeRelayOff 0003  
+        ??_negativeRelayOn 0000             __size_of_ledOn 0003              ??_photoFetOff 0000  
+                main@state 002A        __end_of_photoFetOff 02A6  __size_of_changePedalState 000F  
+         __size_of_pedalOn 0025                   _delay_ms 02D3                   __ptext10 02A3  
+                 __ptext11 02A0                   __ptext12 029D                   __ptext13 02D3  
+                 _flashLed 02C4                   _pedalOff 02EA              __size_of_main 00C9  
+         _positiveRelayOff 02A9               ??_photoFetOn 0000          main@startupOption 0029  
+         _negativeRelayOff 02A0         __end_of_photoFetOn 02A9                _photoFetOff 02A3  
+          _positiveRelayOn 02AC            _negativeRelayOn 02B2  

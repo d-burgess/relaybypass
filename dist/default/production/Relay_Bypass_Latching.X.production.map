@@ -1,0 +1,784 @@
+Microchip MPLAB XC8 Compiler V2.20
+
+Linker command line:
+
+-W-3 --edf=C:\Program Files\Microchip\xc8\v2.20\pic\dat\en_msgs.txt -cn \
+  -h+dist/default/production\Relay_Bypass_Latching.X.production.sym \
+  --cmf=dist/default/production\Relay_Bypass_Latching.X.production.cmf -z \
+  -Q12F675 -oC:\Users\Dan\AppData\Local\Temp\s4lk.2 \
+  --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/production/Relay_Bypass_Latching.X.production.map -E1 \
+  -ver=XC8 Compiler --acfsm=1493 -ASTACK=030h-05Dh -pstack=STACK \
+  -ACODE=00h-03FEh -ASTRCODE=00h-03FEh -ASTRING=00h-0FFhx3,0300h-03FEh \
+  -ACONST=00h-0FFhx3,0300h-03FEh -AENTRY=00h-0FFhx3,0300h-03FEh \
+  -ABANK0=020h-05Dh -ARAM=020h-05Dh -AABS1=020h-05Fh -ACOMMON=05Eh-05Fh \
+  -ASFR0=00h-01Fh -ASFR1=080h-0DDh -ACONFIG=02007h-02007h -DCONFIG=2 \
+  -AIDLOC=02000h-02003h -DIDLOC=2 -preset_vec=00h,intentry,init,end_init \
+  -ppowerup=CODE -pcinit=CODE -pfunctab=ENTRY -AEEDATA=00h-07Fh/02100h \
+  -peeprom_data=EEDATA -DEEDATA=2 -posccal=03FFh -DCODE=2 -DSTRCODE=2 \
+  -DSTRING=2 -DCONST=2 -DENTRY=2 -k C:\Users\Dan\AppData\Local\Temp\s4lk.o \
+  dist/default/production\Relay_Bypass_Latching.X.production.o 
+
+Object code version is 3.11
+
+Machine type is 12F675
+
+
+
+                Name                               Link     Load   Length Selector   Space Scale
+C:\Users\Dan\AppData\Local\Temp\s4lk.o
+                end_init                              0        0        5        0       0
+                config                             2007     2007        1        0       4
+dist/default/production\Relay_Bypass_Latching.X.production.o
+                cinit                               3FD      3FD        2      7FA       0
+                config                             2007     2007        1        0       4
+                text13                              2D3      2D3       17      5A6       0
+                text12                              29D      29D        3      53A       0
+                text11                              2A0      2A0        3      540       0
+                text10                              2A3      2A3        3      546       0
+                text9                               2A6      2A6        3      54C       0
+                text8                               2A9      2A9        3      552       0
+                text7                               2AC      2AC        3      558       0
+                text6                               2EA      2EA       25      5D4       0
+                text5                               2AF      2AF        3      55E       0
+                text4                               2B2      2B2        3      564       0
+                text3                               30F      30F       25      61E       0
+                text2                               2B5      2B5        F      56A       0
+                text1                               2C4      2C4        F      588       0
+                maintext                            334      334       C9      668       0
+                cstackBANK0                          20       20       10       20       1
+
+TOTAL           Name                               Link     Load   Length     Space
+        CLASS   STACK          
+
+        CLASS   CODE           
+                end_init                              0        0        5         0
+                cinit                               3FD      3FD        2         0
+                text13                              2D3      2D3       17         0
+                text12                              29D      29D        3         0
+                text11                              2A0      2A0        3         0
+                text10                              2A3      2A3        3         0
+                text9                               2A6      2A6        3         0
+                text8                               2A9      2A9        3         0
+                text7                               2AC      2AC        3         0
+                text6                               2EA      2EA       25         0
+                text5                               2AF      2AF        3         0
+                text4                               2B2      2B2        3         0
+                text3                               30F      30F       25         0
+                text2                               2B5      2B5        F         0
+                text1                               2C4      2C4        F         0
+                maintext                            334      334       C9         0
+
+        CLASS   STRCODE        
+
+        CLASS   STRING         
+
+        CLASS   CONST          
+
+        CLASS   ENTRY          
+
+        CLASS   BANK0          
+                cstackBANK0                          20       20       10         1
+
+        CLASS   RAM            
+
+        CLASS   ABS1           
+                abs_s1                               5E       5E        2         1
+
+        CLASS   COMMON         
+
+        CLASS   SFR0           
+
+        CLASS   SFR1           
+
+        CLASS   CONFIG         
+                config                             2007     2007        1         4
+
+        CLASS   IDLOC          
+
+        CLASS   EEDATA         
+
+        CLASS   BANK1          
+
+
+
+SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
+
+                reset_vec                      000000  000005  000005         0       0  CODE        2
+                cstackBANK0                    000020  000010  000030        20       1  BANK0       1
+                text12                         00029D  000003  0002A0       53A       0  CODE        2
+                text11                         0002A0  000003  0002A3       540       0  CODE        2
+                text10                         0002A3  000003  0002A6       546       0  CODE        2
+                text9                          0002A6  000003  0002A9       54C       0  CODE        2
+                text8                          0002A9  000003  0002AC       552       0  CODE        2
+                text7                          0002AC  000003  0002AF       558       0  CODE        2
+                text5                          0002AF  000003  0002B2       55E       0  CODE        2
+                text4                          0002B2  000003  0002B5       564       0  CODE        2
+                text2                          0002B5  00000F  0002C4       56A       0  CODE        2
+                text1                          0002C4  00000F  0002D3       588       0  CODE        2
+                text13                         0002D3  000017  0002EA       5A6       0  CODE        2
+                text6                          0002EA  000025  00030F       5D4       0  CODE        2
+                text3                          00030F  000025  000334       61E       0  CODE        2
+                maintext                       000334  0000C9  0003FD       668       0  CODE        2
+                cinit                          0003FD  000002  0003FF       7FA       0  CODE        2
+
+
+UNUSED ADDRESS RANGES
+
+        Name                Unused          Largest block    Delta
+        BANK0            0030-005D             2E           1
+        CODE             0005-029C            298           2
+        CONST            0005-029C            100           2
+        EEDATA           2100-217F             80           2
+        ENTRY            0005-029C            100           2
+        IDLOC            2000-2003              4           2
+        RAM              0030-005D             2E           1
+        SFR0             0000-001F             20           1
+        SFR1             0080-00DD             5E           1
+        STACK            0030-005D             2E           1
+        STRCODE          0005-029C            298           2
+        STRING           0005-029C            100           2
+
+                                  Symbol Table
+
+_ADCON0                    (abs)        001F
+_ANSEL                     (abs)        009F
+_CMCON                     (abs)        0019
+_GP0                       (abs)        0028
+_GP1                       (abs)        0029
+_GP2                       (abs)        002A
+_GP3                       (abs)        002B
+_GP4                       (abs)        002C
+_GP5                       (abs)        002D
+_GPIO                      (abs)        0005
+_TRISIO0                   (abs)        0428
+_TRISIO1                   (abs)        0429
+_TRISIO2                   (abs)        042A
+_TRISIO3                   (abs)        042B
+_TRISIO4                   (abs)        042C
+_TRISIO5                   (abs)        042D
+__Habs1                    abs1         07FE
+__Hbank0                   bank0        07FE
+__Hbank1                   bank1        07FE
+__Hcinit                   cinit        03FF
+__Hclrtext                 clrtext      07FE
+__Hcode                    code         07FE
+__Hcommon                  common       07FE
+__Hconfig                  config       2008
+__HcstackBANK0             cstackBANK0  07FE
+__HcstackCOMMON            cstackCOMMON 07FE
+__Heeprom_data             eeprom_data  0000
+__Hend_init                end_init     0005
+__Hfunctab                 functab      0000
+__Hinit                    init         0000
+__Hintentry                intentry     0000
+__Hmaintext                maintext     07FE
+__Hosccal                  osccal       03FF
+__Hpowerup                 powerup      0000
+__Hram                     ram          07FE
+__Hreset_vec               reset_vec    0000
+__Hsfr0                    sfr0         07FE
+__Hsfr1                    sfr1         07FE
+__Hspace_0                 (abs)        07FE
+__Hspace_1                 (abs)        07FE
+__Hspace_2                 (abs)        0000
+__Hspace_3                 (abs)        0000
+__Hspace_4                 (abs)        400F
+__Hstack                   stack        0000
+__Hstrings                 strings      07FE
+__Htext                    text         07FE
+__Labs1                    abs1         07FE
+__Lbank0                   bank0        07FE
+__Lbank1                   bank1        07FE
+__Lcinit                   cinit        03FD
+__Lclrtext                 clrtext      07FE
+__Lcode                    code         07FE
+__Lcommon                  common       07FE
+__Lconfig                  config       0000
+__LcstackBANK0             cstackBANK0  07FE
+__LcstackCOMMON            cstackCOMMON 07FE
+__Leeprom_data             eeprom_data  0000
+__Lend_init                end_init     0000
+__Lfunctab                 functab      0000
+__Linit                    init         0000
+__Lintentry                intentry     0000
+__Lmaintext                maintext     07FE
+__Losccal                  osccal       03FF
+__Lpowerup                 powerup      0000
+__Lram                     ram          07FE
+__Lreset_vec               reset_vec    0000
+__Lsfr0                    sfr0         07FE
+__Lsfr1                    sfr1         07FE
+__Lspace_0                 (abs)        0000
+__Lspace_1                 (abs)        0000
+__Lspace_2                 (abs)        0000
+__Lspace_3                 (abs)        0000
+__Lspace_4                 (abs)        0000
+__Lstack                   stack        0000
+__Lstrings                 strings      07FE
+__Ltext                    text         07FE
+__S0                       (abs)        03FF
+__S1                       (abs)        0030
+__S2                       (abs)        0000
+__S3                       (abs)        0000
+___int_sp                  stack        0000
+___latbits                 (abs)        0000
+___osccal_val              osccal       03FF
+___sp                      stack        0000
+___stackhi                 (abs)        0000
+___stacklo                 (abs)        0000
+__end_of__initialization   cinit        03FD
+__end_of_changePedalState  text2        02C4
+__end_of_delay_ms          text13       02EA
+__end_of_flashLed          text1        02D3
+__end_of_ledOff            text12       02A0
+__end_of_ledOn             text5        02B2
+__end_of_main              maintext     03FD
+__end_of_negativeRelayOff  text11       02A3
+__end_of_negativeRelayOn   text4        02B5
+__end_of_pedalOff          text6        030F
+__end_of_pedalOn           text3        0334
+__end_of_photoFetOff       text10       02A6
+__end_of_photoFetOn        text9        02A9
+__end_of_positiveRelayOff  text8        02AC
+__end_of_positiveRelayOn   text7        02AF
+__initialization           cinit        03FD
+__pcstackBANK0             cstackBANK0  0020
+__pcstackCOMMON            cstackCOMMON 0000
+__pmaintext                maintext     0334
+__ptext1                   text1        02C4
+__ptext10                  text10       02A3
+__ptext11                  text11       02A0
+__ptext12                  text12       029D
+__ptext13                  text13       02D3
+__ptext2                   text2        02B5
+__ptext3                   text3        030F
+__ptext4                   text4        02B2
+__ptext5                   text5        02AF
+__ptext6                   text6        02EA
+__ptext7                   text7        02AC
+__ptext8                   text8        02A9
+__ptext9                   text9        02A6
+__size_of_changePedalState (abs)        0000
+__size_of_delay_ms         (abs)        0000
+__size_of_flashLed         (abs)        0000
+__size_of_ledOff           (abs)        0000
+__size_of_ledOn            (abs)        0000
+__size_of_main             (abs)        0000
+__size_of_negativeRelayOff (abs)        0000
+__size_of_negativeRelayOn  (abs)        0000
+__size_of_pedalOff         (abs)        0000
+__size_of_pedalOn          (abs)        0000
+__size_of_photoFetOff      (abs)        0000
+__size_of_photoFetOn       (abs)        0000
+__size_of_positiveRelayOff (abs)        0000
+__size_of_positiveRelayOn  (abs)        0000
+_changePedalState          text2        02B5
+_delay_ms                  text13       02D3
+_flashLed                  text1        02C4
+_ledOff                    text12       029D
+_ledOn                     text5        02AF
+_main                      maintext     0334
+_negativeRelayOff          text11       02A0
+_negativeRelayOn           text4        02B2
+_pedalOff                  text6        02EA
+_pedalOn                   text3        030F
+_photoFetOff               text10       02A3
+_photoFetOn                text9        02A6
+_positiveRelayOff          text8        02A9
+_positiveRelayOn           text7        02AC
+btemp                      (abs)        005E
+changePedalState@state     cstackBANK0  0026
+delay_ms@milliseconds      cstackBANK0  0020
+end_of_initialization      cinit        03FD
+flashLed@delayInMs         cstackBANK0  0023
+intlevel0                  functab      0000
+intlevel1                  functab      0000
+intlevel2                  functab      0000
+intlevel3                  functab      0000
+intlevel4                  functab      0000
+intlevel5                  functab      0000
+main@downCount             cstackBANK0  002B
+main@i                     cstackBANK0  002E
+main@startupOption         cstackBANK0  0029
+main@state                 cstackBANK0  002A
+main@statusChangeAllowed   cstackBANK0  002D
+main@switchStatus          cstackBANK0  002F
+main@upCount               cstackBANK0  002C
+pedalOff@delayInMs         cstackBANK0  0025
+pedalOn@delayInMs          cstackBANK0  0025
+reset_vec                  reset_vec    0000
+start                      init         0000
+start_initialization       cinit        03FD
+wtemp0                     (abs)        005E
+
+
+FUNCTION INFORMATION:
+
+ *************** function _main *****************
+ Defined at:
+		line 18 in file "relayonpress.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  switchStatus    1   15[BANK0 ] unsigned char 
+  i               1   14[BANK0 ] unsigned char 
+  statusChange    1   13[BANK0 ] unsigned char 
+  upCount         1   12[BANK0 ] unsigned char 
+  downCount       1   11[BANK0 ] unsigned char 
+  state           1   10[BANK0 ] char 
+  startupOptio    1    9[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0, btemp+1, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       7
+      Temps:          0       2
+      Totals:         0       9
+Total ram usage:        9 bytes
+ Hardware stack levels required when called:    3
+ This function calls:
+		_changePedalState
+		_flashLed
+ This function is called by:
+		Startup code after reset
+ This function uses a non-reentrant model
+
+
+ *************** function _flashLed *****************
+ Defined at:
+		line 173 in file "relayonpress.c"
+ Parameters:    Size  Location     Type
+  delayInMs       2    3[BANK0 ] unsigned int 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       2
+      Locals:         0       0
+      Temps:          0       0
+      Totals:         0       2
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		_delay_ms
+		_ledOff
+		_ledOn
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _changePedalState *****************
+ Defined at:
+		line 219 in file "relayonpress.c"
+ Parameters:    Size  Location     Type
+  state           1    wreg     char 
+ Auto vars:     Size  Location     Type
+  state           1    6[BANK0 ] char 
+ Return value:  Size  Location     Type
+                  1    wreg      char 
+ Registers used:
+		wreg, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       1
+      Temps:          0       0
+      Totals:         0       1
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		_pedalOff
+		_pedalOn
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _pedalOn *****************
+ Defined at:
+		line 181 in file "relayonpress.c"
+ Parameters:    Size  Location     Type
+  delayInMs       1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  delayInMs       1    5[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       1
+      Temps:          0       2
+      Totals:         0       3
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		_delay_ms
+		_ledOn
+		_negativeRelayOff
+		_negativeRelayOn
+		_photoFetOff
+		_photoFetOn
+		_positiveRelayOff
+ This function is called by:
+		_changePedalState
+ This function uses a non-reentrant model
+
+
+ *************** function _negativeRelayOn *****************
+ Defined at:
+		line 157 in file "relayonpress.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       0
+      Temps:          0       0
+      Totals:         0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_pedalOn
+ This function uses a non-reentrant model
+
+
+ *************** function _ledOn *****************
+ Defined at:
+		line 149 in file "relayonpress.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       0
+      Temps:          0       0
+      Totals:         0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_flashLed
+		_pedalOn
+ This function uses a non-reentrant model
+
+
+ *************** function _pedalOff *****************
+ Defined at:
+		line 200 in file "relayonpress.c"
+ Parameters:    Size  Location     Type
+  delayInMs       1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  delayInMs       1    5[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       1
+      Temps:          0       2
+      Totals:         0       3
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		_delay_ms
+		_ledOff
+		_negativeRelayOff
+		_photoFetOff
+		_photoFetOn
+		_positiveRelayOff
+		_positiveRelayOn
+ This function is called by:
+		_changePedalState
+ This function uses a non-reentrant model
+
+
+ *************** function _positiveRelayOn *****************
+ Defined at:
+		line 165 in file "relayonpress.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       0
+      Temps:          0       0
+      Totals:         0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_pedalOff
+ This function uses a non-reentrant model
+
+
+ *************** function _positiveRelayOff *****************
+ Defined at:
+		line 169 in file "relayonpress.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       0
+      Temps:          0       0
+      Totals:         0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_pedalOn
+		_pedalOff
+ This function uses a non-reentrant model
+
+
+ *************** function _photoFetOn *****************
+ Defined at:
+		line 141 in file "relayonpress.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       0
+      Temps:          0       0
+      Totals:         0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_pedalOn
+		_pedalOff
+ This function uses a non-reentrant model
+
+
+ *************** function _photoFetOff *****************
+ Defined at:
+		line 145 in file "relayonpress.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       0
+      Temps:          0       0
+      Totals:         0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_pedalOn
+		_pedalOff
+ This function uses a non-reentrant model
+
+
+ *************** function _negativeRelayOff *****************
+ Defined at:
+		line 161 in file "relayonpress.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       0
+      Temps:          0       0
+      Totals:         0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_pedalOn
+		_pedalOff
+ This function uses a non-reentrant model
+
+
+ *************** function _ledOff *****************
+ Defined at:
+		line 153 in file "relayonpress.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       0
+      Temps:          0       0
+      Totals:         0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_flashLed
+		_pedalOff
+ This function uses a non-reentrant model
+
+
+ *************** function _delay_ms *****************
+ Defined at:
+		line 134 in file "relayonpress.c"
+ Parameters:    Size  Location     Type
+  milliseconds    2    0[BANK0 ] unsigned int 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       2
+      Locals:         0       0
+      Temps:          0       1
+      Totals:         0       3
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_flashLed
+		_pedalOn
+		_pedalOff
+ This function uses a non-reentrant model
+
+
+
+MODULE INFORMATION
+
+Module		Function		Class		Link	Load	Size
+relayonpress.c
+		_pedalOff      		CODE           	02EA	0000	38
+		_flashLed      		CODE           	02C4	0000	16
+		_ledOff        		CODE           	029D	0000	4
+		_main          		CODE           	0334	0000	202
+		_ledOn         		CODE           	02AF	0000	4
+		_positiveRelayOn		CODE           	02AC	0000	4
+		_pedalOn       		CODE           	030F	0000	38
+		_negativeRelayOff		CODE           	02A0	0000	4
+		_changePedalState		CODE           	02B5	0000	16
+		_delay_ms      		CODE           	02D3	0000	24
+		_photoFetOn    		CODE           	02A6	0000	4
+		_photoFetOff   		CODE           	02A3	0000	4
+		_positiveRelayOff		CODE           	02A9	0000	4
+		_negativeRelayOn		CODE           	02B2	0000	4
+
+relayonpress.c estimated size: 366
+
+shared
+		__initialization		CODE           	03FD	0000	1
+
+shared estimated size: 1
+
