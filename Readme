@@ -1,3 +1,10 @@
-# relay bypass latching
-Relay Bypass code for PIC12F675 with a latching relay 
+# latching relay bypass
+
+A bypass system for guitar effects pedals using the PIC12F675 microcontroller and a latching relay e.g. Panasonic TQ2-L-5V
+
+Adds an option to turn pedal on or off at power up which is useful for pedals in effects loops for example. The pinout from the microcontroller has been modified from the original code to support this. The LED will flash at power on to indicate the status of this option, twice for off and three times for on.
+
+The debounce code has been modified to detect false positives more accurately.
+
 Based on code from Coda Effects (www.coda-effects.com)
+https://github.com/benoitme/relaybypass
